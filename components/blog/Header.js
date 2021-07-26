@@ -12,7 +12,7 @@ export default function Header() {
   const variant = {
     visible: {
       scale: 1.01,
-      rotate: [0, -1, -1, 0]
+      rotate: [0, -1, 1, 0]
     }
   }
 
