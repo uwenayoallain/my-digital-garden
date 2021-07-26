@@ -1,10 +1,10 @@
 import { postFilePaths } from '@/utils/mdxUtils'
 import { MDXRemote } from 'next-mdx-remote'
 import dynamic from 'next/dynamic'
-import Head from 'next/head'
 import CustomLink from '@/components/CustomLink'
 import PostLayout from "@/layouts/index"
 import { getFileBySlug } from '@/lib/mdx'
+import Head from 'next/head'
 
 const components = {
   a: CustomLink,
@@ -13,8 +13,12 @@ const components = {
 }
 
 export default function PostPage({ mdxSource, frontMatter }) {
+  const path = (frontMatter.slug).replace("blog/", "");
   return (
     <PostLayout frontMatter={frontMatter}>
+      <Head>
+        <title>uwenayoallain - {path}</title>
+      </Head>
       <MDXRemote {...mdxSource} components={components} />
     </PostLayout>
   )

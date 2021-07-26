@@ -13,9 +13,6 @@ export default function Blog({ description, posts }) {
     const filteredPosts = posts.slice(0, size);
     return (
         <Container>
-            <Head>
-                <title>uwenayoallain - Blog</title>
-            </Head>
             <div>
                 <Header />
                 <h1 className='text-center text-5xl font-extrabold my-10 capitalize'>
