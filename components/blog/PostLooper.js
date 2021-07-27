@@ -1,25 +1,28 @@
+import { useState } from "react";
 import Post from "./Post";
 
-export default function PostLooper({ posts, size = 3 }) {
-    const filteredPosts = posts.slice(0, size);
+export default function PostLooper({ posts, defaultSize = 3 }) {
+    const [size, setSize] = useState(defaultSize);
+    const filteredPosts = (posts.slice(0, size)).sort((a, b) => { return new Date(b.frontMatter.date) - new Date(a.frontMatter.date) });
     return (
-        <div {...props}>
+        <div>
             {filteredPosts.map(post => {
-                const { title, path, excerpt, by, date, readingTime, words } = post;
+                const { title, slug, excerpt, by, date, readingTime } = post.frontMatter;
+                const postPath = `blog/${slug}`;
                 return (
                     <Post
                         title={title}
-                        path={path}
-                        key={path}
+                        path={postPath}
+                        key={slug}
                         excerpt={excerpt}
                         by={by}
-                        readingTime={readingTime}
-                        words={words}
+                        readingTime={readingTime.text}
+                        words={readingTime.words}
                         date={date} />
                 )
             })}
             {
-                filteredPosts.length < posts.length ? <button className="link capitalize" onClick={() => setSize(posts.length)} >all posts</button> : ''
+                filteredPosts.length < posts.length ? <button className="link capitalize" onClick={() => { return setSize(10) }} >all posts</button> : ''
             }
         </div>
     )

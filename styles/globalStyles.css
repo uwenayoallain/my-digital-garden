@@ -15,7 +15,9 @@ div.main {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-
+.-z-index {
+  z-index: -1 !important;
+}
 ::selection {
   @apply text-white  bg-skin-inverted;
   text-shadow: none;

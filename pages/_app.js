@@ -5,7 +5,7 @@ import Head from "next/head";
 import Header from "@/components/common/Header";
 import Footer from '@/components/common/Footer';
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="shortcut icon" href="./images/my-image.jpg" type="image/x-icon" />
         <title>uwenayoallain - {path == "" ? "home" : path}</title>
       </Head>
-      <div className={`main ${theme}`}>
+      <div className={`main ${theme}`} id="main">
         <Header currentTheme={handleTheme} />
         <div className='flex items-center justify-center mt-5'>
           <div className='w-full sm:w-full md:w-9/12 lg:w-7/12 shadow-sm p-1 md:p-5 rounded'>

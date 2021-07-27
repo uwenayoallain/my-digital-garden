@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion'
 import { usePageViews } from '@/hooks/useCountpageviews'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 
-export default function Post({ title, slug, excerpt, by, date, readingTime, words }) {
+export default function Post({ title, path, excerpt, by, date, readingTime, words }) {
   const variants = {
     final: {
       scale: 1.05, rotate: [0, -1, 1, 0], transition: {
@@ -13,7 +13,6 @@ export default function Post({ title, slug, excerpt, by, date, readingTime, word
       scale: 0.95
     },
   }
-  const path = `blog/${slug}`;
   const views = usePageViews(path)
   return (
     <motion.div variants={variants} whileHover="final" whileTap="tap">
