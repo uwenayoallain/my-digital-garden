@@ -2,8 +2,7 @@ import Link from 'next/link'
 import Header from '@/components/blog/Header'
 import Container from '@/components/simplifiers/Container';
 import { useCountPageView } from '@/hooks/useCountpageviews';
-import Text from '@/components/blog/Text';
-import Badge from '@/components/blog/Badge';
+import Author from "@/components/blog/Author";
 
 export default function PostLayout({ children, frontMatter }) {
     const { title, slug, readingTime, by, date } = frontMatter;
@@ -18,8 +17,7 @@ export default function PostLayout({ children, frontMatter }) {
                     <h1 className="capitalize">
                         {title}
                     </h1>
-                    <Text>{views} views &#8226; {readingTime.text} &#8226; {readingTime.words} words</Text>
-                    <Badge>{by}</Badge>
+                    <Author by={by} readingTime={readingTime} views={views} date={date} />
                 </div>
                 {children}
             </main>
