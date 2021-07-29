@@ -1,3 +1,4 @@
+import { usePageViews } from "@/hooks/useCountpageviews";
 import { useState } from "react";
 import Post from "./Post";
 

@@ -25,7 +25,7 @@ const Index = ({ description }) => {
         <div dangerouslySetInnerHTML={{ __html: content }} />
       </Blockquote>
 
-      <p className='text-left capitalize'>from my <a target="_blank" href="https://github.com/uwenayoallain" className='text-skin-base hover:underline'>github profile</a></p>
+      <p className='text-left capitalize'>from my <a target="_blank" href="https://github.com/uwenayoallain" className='!text-skin-base !no-underline hover:!underline'>github profile</a></p>
 
       <Text>More info about me.</Text>
 
@@ -93,7 +93,7 @@ const Index = ({ description }) => {
           </svg>
         }
       />
-      <h2> Featured Posts:</h2>
+      {/* <h2> Featured Posts:</h2> */}
     </PageLayout>
   )
 }
@@ -101,8 +101,7 @@ export default Index;
 
 export async function getStaticProps() {
 
-  // const description = await Fetcher("https://raw.githubusercontent.com/uwenayoallain/uwenayoallain/main/README.md", "text")
-  const description = `### this is cool`
+  const description = await Fetcher("https://raw.githubusercontent.com/uwenayoallain/uwenayoallain/main/README.md", "text")
 
   return {
     props: {

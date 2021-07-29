@@ -2,7 +2,7 @@ import React from 'react'
 import countAPI from 'countapi-js'
 
 export function usePageViews(path) {
-    const [views, setViews] = React.useState(0)
+    const [views, setViews] = React.useState("---")
     const namespace = "uwenayoallain.com"
     const key = (path).replace('\\', "").replace('/', "")
     React.useEffect(() => {
@@ -12,7 +12,7 @@ export function usePageViews(path) {
 }
 
 export function useCountPageView(path) {
-    const [views, setViews] = React.useState(0)
+    const [views, setViews] = React.useState("---")
     const namespace = "uwenayoallain.com"
     const key = (path).replace('/', "").replace('/', '')
     React.useEffect(() => {

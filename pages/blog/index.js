@@ -1,15 +1,8 @@
-import marked from 'marked';
-import { useState } from 'react';
-import Post from '@/components/blog/Post';
 import Header from "@/components/blog/Header";
 import { getAllFilesFrontMatter } from '@/lib/mdx';
-import Blockquote from '@/components/blog/Quote';
 import Container from '@/components/simplifiers/Container';
-import Fetcher from '@/lib/fetcher';
 import PostLooper from '@/components/blog/PostLooper';
 export default function Blog({ posts }) {
-    // const [size, setSize] = useState(2);
-    // const filteredPosts = posts.slice(0, size);
     return (
         <Container>
             <div>
@@ -21,24 +14,7 @@ export default function Blog({ posts }) {
             </div>
 
             <div >
-                {/* {filteredPosts.map(post => {
-                    const { title, slug, excerpt, by, date, readingTime } = post.frontMatter;
-                    return (
-                        <Post
-                            title={title}
-                            slug={slug}
-                            key={slug}
-                            excerpt={excerpt}
-                            by={by}
-                            readingTime={readingTime.text}
-                            words={readingTime.words}
-                            date={date} />
-                    )
-                })}
-                {
-                    filteredPosts.length < posts.length ? <button className="link capitalize" onClick={() => setSize(posts.length)} >all posts</button> : ''
-                } */}
-                <PostLooper posts={posts} defaultSize={2} />
+                <PostLooper posts={posts} defaultSize={3} />
             </div>
         </Container>
     )

@@ -22,6 +22,7 @@ div.main {
   @apply text-white  bg-skin-inverted;
   text-shadow: none;
 }
+
 div.main {
   height: 100vh;
   width: 100vw;
@@ -40,7 +41,7 @@ div.main {
 
 ::-webkit-scrollbar-thumb {
   @apply bg-skin-inverted/90;
-  border-radius: 0px;
+  border-radius: 5px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
@@ -74,6 +75,51 @@ div.main {
 }
 .hoverable-inverse {
   @apply text-skin-base bg-skin-base p-2 rounded bg-opacity-25;
+}
+
+a {
+  @apply text-skin-base no-underline;
+}
+
+blockquote {
+  @apply relative border-l-4 border-skin-base pl-6 p-5 leading-7 rounded m-3 bg-skin-base;
+}
+
+blockquote::after {
+  content: "\201D";
+  @apply flex justify-center items-center absolute text-white py-0 px-2.5 bg-skin-inverted rounded-full -top-3 -left-4;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply relative w-max;
+}
+
+h1:hover a::before,
+h2:hover a::before,
+h3:hover a::before,
+h4:hover a::before {
+  @apply text-gray-400 absolute right-0;
+  content: "#";
+}
+h1 > a:hover::before,
+h2 > a:hover::before,
+h3 > a:hover::before,
+h4 > a:hover::before {
+  @apply text-gray-600 absolute right-0;
+  content: "#";
+}
+h1 > a:focus::before,
+h2 > a:focus::before,
+h3 > a:focus::before,
+h4 > a:focus::before {
+  @apply text-skin-base absolute right-0;
+  content: "#";
+}
+a {
+  @apply visible no-underline;
 }
 
 @layer base {
@@ -128,65 +174,4 @@ div.main {
     --background-color-base: 255, 241, 242;
     --border-color-base: 225, 29, 72;
   }
-}
-
-div.markdown a {
-  @apply text-skin-base no-underline;
-}
-
-div.markdown blockquote {
-  @apply relative border-l-4 border-skin-base pl-6 p-5 leading-7 rounded m-3 bg-skin-base;
-}
-
-div.markdown blockquote::after {
-  content: "\201D";
-  @apply flex justify-center items-center absolute text-white py-0 px-2.5 bg-skin-inverted rounded-full -top-3 -left-4;
-}
-div.markdown input {
-  @apply rounded text-skin-base border-skin-base;
-}
-
-a:hover {
-  @apply visible no-underline;
-}
-.markdown h1 {
-  @apply relative pl-10 transform -translate-x-10;
-}
-.markdown h2 {
-  @apply relative pl-8 transform -translate-x-8;
-}
-.markdown h3 {
-  @apply relative pl-6 transform -translate-x-6;
-}
-.markdown h4 {
-  @apply relative pl-4 transform -translate-x-4;
-}
-
-.markdown h1:hover a::before,
-.markdown h2:hover a::before,
-.markdown h3:hover a::before,
-.markdown h4:hover a::before {
-  @apply text-gray-400 absolute left-0;
-  content: "#";
-}
-.markdown h1 > a:hover::before,
-.markdown h2 > a:hover::before,
-.markdown h3 > a:hover::before,
-.markdown h4 > a:hover::before {
-  @apply text-gray-600 absolute left-0;
-  content: "#";
-}
-.markdown h1 > a:focus::before,
-.markdown h2 > a:focus::before,
-.markdown h3 > a:focus::before,
-.markdown h4 > a:focus::before {
-  @apply text-skin-base absolute left-0;
-  content: "#";
-}
-.markdown * > a {
-  @apply visible no-underline;
-}
-.remark-code-title {
-  @apply px-4 rounded-md -mb-5 w-max text-white;
-  background: #1e1e3f;
 }
