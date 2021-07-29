@@ -1,11 +1,10 @@
 import "@/styles/globalStyles.css";
-import "@/styles/app.css";
 import "@/styles/prism.css";
 import Head from "next/head";
 import Header from "@/components/common/Header";
 import Footer from '@/components/common/Footer';
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
@@ -39,8 +38,4 @@ function MyApp({ Component, pageProps }) {
     </>
   );
 }
-
-// export function reportWebVitals(metric) {
-//   console.log(metric)
-// }
 export default MyApp;
