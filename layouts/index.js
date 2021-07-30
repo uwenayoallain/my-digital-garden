@@ -19,7 +19,13 @@ export default function PostLayout({ children, frontMatter }) {
                     </h1>
                     <Author by={by} readingTime={readingTime} views={views} date={date} />
                 </div>
-                {children}
+                <div className='flex items-center justify-center mt-5'>
+                    <div className='w-full sm:w-full md:w-9/12 lg:w-7/12 shadow-sm p-1 md:p-5 rounded'>
+                        <div className='text-center my-3'>
+                            {children}
+                        </div>
+                    </div>
+                </div>
             </main>
             <Link href="/">
                 <a className="static">

@@ -94,7 +94,7 @@ a {
 }
 
 .link {
-  @apply px-3.5 py-2 relative before:absolute before:transition before:left-0 before:bottom-0 before:border-gray-900 dark:before:border-white before:w-full before:scale-0 before:border hover:before:scale-100;
+  @apply px-3.5 py-2  m-2 relative before:absolute before:transition before:left-0 before:bottom-0 before:border-gray-900 dark:before:border-white before:w-full before:scale-x-0 before:border hover:before:scale-x-100;
 }
 
 @layer base {

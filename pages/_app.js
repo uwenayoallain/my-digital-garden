@@ -27,15 +27,10 @@ function MyApp({ Component, pageProps }) {
         </Head>
         <div className={`main relative dark:bg-gray-900 dark:text-white ${theme}`} id="main">
           <Header currentTheme={handleTheme} />
-          <div className='flex items-center justify-center mt-5'>
-            <div className='w-full sm:w-full md:w-9/12 lg:w-7/12 shadow-sm p-1 md:p-5 rounded'>
-              <div className='text-center my-3'>
-                <AnimatePresence exitBeforeEnter>
-                  <Component {...pageProps} />
-                </AnimatePresence>
-              </div>
-            </div>
-          </div>
+
+          <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} />
+          </AnimatePresence>
           <Footer />
         </div>
       </ThemeProvider>
