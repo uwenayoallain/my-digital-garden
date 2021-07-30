@@ -4,12 +4,9 @@ import Looper from "@/components/simplifiers/Looper";
 import Text from "@/components/blog/Text";
 import Badge from "@/components/blog/Badge";
 import Card from '@/components/common/Card';
-import Fetcher from '@/lib/fetcher';
-import marked from "marked";
 
-const Index = ({ description }) => {
+const Index = () => {
 
-  const content = marked(description);
   return (
     <PageLayout>
 
@@ -21,15 +18,14 @@ const Index = ({ description }) => {
       </Text>
       <hr />
       <h2> About Me:</h2>
-      <Blockquote otherstyles="text-left bg-skin-base/50" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" /><path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>}>
-        <div dangerouslySetInnerHTML={{ __html: content }} />
-      </Blockquote>
+      <Blockquote content='I highly recommend giving daily.dev a try. It’s an awesome coding news reader that delivers the top dev news in a way that’s simple and developer-friendly. Best of all, you can personalize it to get only the things you like.'
+        otherstyles="text-left" icon={<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" /><path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>} />
 
-      <p className='text-left capitalize'>from my <a target="_blank" href="https://github.com/uwenayoallain" className='!text-skin-base !no-underline hover:!underline'>github profile</a></p>
+      <Text>
+        <p className='text-left capitalize'>more info <a target="_blank" href="https://github.com/uwenayoallain" className='!text-skin-base !no-underline hover:!underline'>github profile</a></p>
+      </Text>
 
-      <Text>More info about me.</Text>
-
-      <h4>Programming Languages i mostly use:</h4>
+      <h3>Programming Languages i mostly use:</h3>
 
       <Looper elements={[
         ["javascript", "/"],
@@ -98,14 +94,3 @@ const Index = ({ description }) => {
   )
 }
 export default Index;
-
-export async function getStaticProps() {
-
-  const description = await Fetcher("https://raw.githubusercontent.com/uwenayoallain/uwenayoallain/main/README.md", "text")
-
-  return {
-    props: {
-      description,
-    },
-  }
-}

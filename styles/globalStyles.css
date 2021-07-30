@@ -35,7 +35,7 @@ div.main {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-skin-base;
+  @apply bg-skin-base dark:bg-gray-800;
   border-radius: 0px;
 }
 
@@ -52,35 +52,6 @@ div.main {
   background-clip: content-box;
 }
 
-.link {
-  @apply cursor-pointer mx-3 px-5 py-3 hover:rounded hover:text-skin-base hover:bg-skin-base/20 transition;
-}
-.active {
-  @apply border-b border-skin-base;
-}
-
-.normal-link {
-  @apply text-gray-900/90 hover:text-skin-base p-2;
-}
-
-.badger {
-  @apply bg-skin-inverted/30 rounded text-center px-3 py-0.5 m-2;
-}
-
-.static {
-  @apply text-center transition text-white m-3.5 bg-skin-inverted hover:bg-skin-inverted/95  p-2 rounded  w-1/3 inline-block;
-}
-.hoverable {
-  @apply text-skin-base hover:bg-skin-base p-2 rounded bg-opacity-25;
-}
-.hoverable-inverse {
-  @apply text-skin-base bg-skin-base p-2 rounded bg-opacity-25;
-}
-
-a {
-  @apply text-skin-base no-underline;
-}
-
 blockquote {
   @apply relative border-l-4 border-skin-base pl-6 p-5 leading-7 rounded m-3 bg-skin-base;
 }
@@ -94,32 +65,36 @@ h1,
 h2,
 h3,
 h4 {
-  @apply relative w-max;
+  @apply relative w-max dark:text-white;
 }
 
 h1:hover a::before,
 h2:hover a::before,
 h3:hover a::before,
 h4:hover a::before {
-  @apply text-gray-400 absolute right-0;
+  @apply text-gray-400 absolute -right-5;
   content: "#";
 }
 h1 > a:hover::before,
 h2 > a:hover::before,
 h3 > a:hover::before,
 h4 > a:hover::before {
-  @apply text-gray-600 absolute right-0;
+  @apply text-gray-600 absolute -right-5;
   content: "#";
 }
 h1 > a:focus::before,
 h2 > a:focus::before,
 h3 > a:focus::before,
 h4 > a:focus::before {
-  @apply text-skin-base absolute right-0;
+  @apply text-skin-base absolute -right-5;
   content: "#";
 }
 a {
   @apply visible no-underline;
+}
+
+.link {
+  @apply px-3.5 py-2 relative before:absolute before:transition before:left-0 before:bottom-0 before:border-gray-900 dark:before:border-white before:w-full before:scale-0 before:border hover:before:scale-100;
 }
 
 @layer base {

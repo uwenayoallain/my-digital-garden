@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ActiveLink from "./Link";
 import { useEffect, useState } from "react";
+import { Toggle } from "@/utils/Themes";
 export default function Header({ currentTheme }) {
   let themes = ["theme-default", "theme-violet", "theme-green", "theme-indigo", "theme-red", "theme-amber", "theme-pink", "theme-teal", "theme-fuchsia", "theme-rose  "];
   let initialTheme = "theme-default";
@@ -29,9 +30,9 @@ export default function Header({ currentTheme }) {
     setTheme(themes[++index])
   }
   return (
-    <div className={`flex items-center justify-center mt-5`}>
+    <div className={`flex items-center justify-center p-5 bg-white dark:bg-gray-900 sticky top-0 z-30 shadow-sm`}>
       <Link href={'/'}>
-        <a className="cursor-pointer"  >
+        <a className="cursor-pointer">
           <svg width="80" height="50" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="35" height="15" fill="#000" x="20" y='10' />
             <rect width="20" height="20" rx="100" fill="#d18512" y="30" x='25' />
@@ -39,15 +40,12 @@ export default function Header({ currentTheme }) {
           </svg>
         </a>
       </Link>
-      <ActiveLink activeClassName='active' href={"/"}>
+      <ActiveLink activeClassName='text-skin-base' href={"/"}>
         <a href='' className='link'>
           Home
         </a>
       </ActiveLink>
-      {/* <ActiveLink activeClassName='active' href={"/#about"}>
-        <a className='link'>About</a>
-      </ActiveLink> */}
-      <ActiveLink activeClassName='active' href={"/blog"}>
+      <ActiveLink activeClassName='text-skin-base' href={"/blog"}>
         <a className='link'>Blog</a>
       </ActiveLink>
       <button
@@ -63,8 +61,9 @@ export default function Header({ currentTheme }) {
           <rect width='100%' height='100%' fill='currentColor' rx='50%' />
         </svg>
       </button>
+      <Toggle />
       <a
-        className='link'
+        className='px-3.5 py-2.5 rounded m-3 hover:bg-skin-base'
         href={"https://github.com/uwenayoallain/uwenayoallain.com"}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
