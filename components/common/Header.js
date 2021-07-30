@@ -50,7 +50,7 @@ export default function Header({ currentTheme }) {
       </ActiveLink>
       <button
         onClick={() => changeTheme(theme)}
-        className={`cursor-pointer mx-3 p-3 rounded-full text-skin-base hover:bg-skin-base transition`}
+        className={`cursor-pointer mx-3 p-3 rounded-full text-skin-base hover:bg-skin-inverted/30 transition`}
       >
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -63,7 +63,7 @@ export default function Header({ currentTheme }) {
       </button>
       <Toggle />
       <a
-        className='px-3.5 py-2.5 rounded m-3 hover:bg-skin-base'
+        className='px-3.5 py-2.5 rounded m-3 hover:bg-skin-base dark:hover:bg-skin-inverted/70'
         href={"https://github.com/uwenayoallain/uwenayoallain.com"}>
         <svg
           xmlns='http://www.w3.org/2000/svg'
