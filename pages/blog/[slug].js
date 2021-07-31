@@ -1,13 +1,11 @@
 import { postFilePaths } from '@/utils/mdxUtils'
 import { MDXRemote } from 'next-mdx-remote'
 import dynamic from 'next/dynamic'
-import CustomLink from '@/components/CustomLink'
 import PostLayout from "@/layouts/index"
 import { getFileBySlug } from '@/lib/mdx'
 import Head from 'next/head'
 
 const components = {
-  a: CustomLink,
   TestComponent: dynamic(() => import('@/components/TestComponent')),
   Head,
 }

@@ -1,7 +1,7 @@
 export default function Heading({ children }) {
     return (
-        <p className='font-serif text-4xl font-bold capitalize'>
+        <div className='text-4xl leading-10 font-medium capitalize'>
             {children}
-        </p>
+        </div>
     )
 }

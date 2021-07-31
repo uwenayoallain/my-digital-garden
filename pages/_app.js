@@ -25,12 +25,12 @@ function MyApp({ Component, pageProps }) {
           <link rel="shortcut icon" href="./images/my-image.jpg" type="image/x-icon" />
           <title>uwenayoallain - {path == "" ? "home" : path}</title>
         </Head>
-        <div className={`main relative dark:bg-gray-900 dark:text-white ${theme}`} id="main">
+        <div className={`main relative w-full dark:bg-gray-900 dark:text-white ${theme}`} id="main">
           <Header currentTheme={handleTheme} />
-
           <AnimatePresence exitBeforeEnter>
             <Component {...pageProps} />
           </AnimatePresence>
+          <hr className="dark:border-gray-600" />
           <Footer />
         </div>
       </ThemeProvider>

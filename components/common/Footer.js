@@ -1,16 +1,59 @@
+import Link from "next/link";
+
 export default function Footer() {
     return (
-        <div className={`flex items-center justify-center mt-5`}>
-            <a target="_blank" href="https://github.com/uwenayoallain" className='normal-link'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-github" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                </svg>
-            </a>
-            <a target="_blank" href="mailto:uwenayoallain@gmail.com" className='normal-link '>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z" />
-                </svg>
-            </a>
+        <div className="h-screen leading-10 font-medium capitalize relative">
+            <div className="grid grid-cols-4 pt-[10%] p-6 w-11/12 mx-auto">
+                <div className="text-lg">
+                    <Link href={'/'}>
+                        <a className="cursor-pointer">
+                            <svg width="80" height="50" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg" className="inline-block">
+                                <rect width="35" height="15" fill="#000" x="20" y='10' />
+                                <rect width="20" height="20" rx="100" fill="#d18512" y="30" x='25' />
+                                <rect width="20" height="20" fill="#9310eb" y='10' x='10' />
+                            </svg>
+                            uwenayoallain
+                        </a>
+                    </Link>
+                </div>
+                <div className="mt-2 text-center h-full">
+                    <p className="text-lg">
+                        Site Map
+                    </p>
+                    <div>
+                        <Link href={"/"}><a className="link">Home</a></Link>
+                    </div>
+                    <div>
+                        <Link href={"/about"}><a className="link">About</a></Link>
+                    </div>
+                    <div>
+                        <Link href={"/blog"}><a className="link">Blog</a></Link>
+                    </div>
+                    <div>
+                        <Link href={"/newsletter"}><a className="link">Newsletter</a></Link>
+                    </div>
+                    <div>
+                        <Link href={"/uses"}><a className="link">Uses</a></Link>
+                    </div>
+                    <div>
+                        <Link href={"/dashboard"}><a className="link">Dashboard</a></Link>
+                    </div>
+                    <div>
+                        <Link href={"/timeline"}><a className="link">Timeline</a></Link>
+                    </div>
+                    <div>
+                        <Link href={"/sitemap"}><a className="link">Sitemap</a></Link>
+                    </div>
+                </div>
+                <div className="mt-2  h-full col-span-1">
+                    <p className="text-lg">
+                        Newsletter
+                    </p>
+
+                    <p className="dark:text-gray-300 text-gray-700">Stay up to date with the latest news and updates</p>
+                </div>
+            </div>
+            <p className="absolute bottom-0 text-center">All right reserved - uwenayoallain</p>
         </div>
     );
 }
