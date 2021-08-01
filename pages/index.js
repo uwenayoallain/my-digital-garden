@@ -41,9 +41,9 @@ const Index = () => {
           <div className="w-1/2 h-full">
           </div>
           <div className="w-1/2 h-3/4">
-            <Heading>About me:</Heading>
+            <Heading>Uwenayoallain(Yarison allain)</Heading>
             <SubHeading>
-              Hi there,I'm uwenayoallain(Yarison allain) a junior developer and a learner at <a href="http://rca.ac.rw/" className="text-skin-base hover:underline">Rwanda coding academy</a>, i am currently learning web techs and working on some <a href="https://github.com/uwenayoallain" className="text-skin-base hover:underline">open source projects.</a>
+              Hi there, I'm a junior developer and a learner at <a href="http://rca.ac.rw/" className="text-skin-base hover:underline">Rwanda coding academy</a>, i am currently learning web techs and working on some <a href="https://github.com/uwenayoallain" className="text-skin-base hover:underline">open source projects.</a>
               <InnerLink href="/about" content="Read more about me" />
             </SubHeading>
           </div>

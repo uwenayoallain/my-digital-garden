@@ -63,7 +63,7 @@ export default function Footer() {
                             type="email"
                             label="Your Email"
                         />
-                        <SubmitButton type="submit" content="Submit" className="" />
+                        <SubmitButton type="submit" content="Submit" />
                     </Form>
                 </div>
                 <div className="ml-4 mt-2  h-full col-span-1">
