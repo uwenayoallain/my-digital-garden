@@ -12,3 +12,13 @@ export default function InnerLink({ href, content = "Learn more", ...otherProps 
     </Link>
   )
 }
+
+export const ButtonLinks = ({ firsthref = "/home", lasthref = "/blog", firstbutton = "home", lastbutton = "blog", ...otherProps }) => {
+  return (
+    <Link href={firsthref}>
+      <a className="group mt-16 my-3 mx-6 block w-max rounded-full p-6 pr-12 border-2 font-medium dark:text-black text-gray-100 dark:bg-white hover:ring-4 hover:ring-yellow-400 hover:text-yellow-400 dark:hover:text-indigo-500 dark:hover:ring-indigo-500 bg-black border-black dark:border-white" {...otherProps}>
+        {firstbutton}
+      </a>
+    </Link>
+  )
+}
