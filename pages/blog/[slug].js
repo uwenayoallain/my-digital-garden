@@ -6,7 +6,7 @@ import { getFileBySlug } from '@/lib/mdx'
 import Head from 'next/head'
 
 const components = {
-  TestComponent: dynamic(() => import('@/components/TestComponent')),
+  // TestComponent: dynamic(() => import('@/components/TestComponent')),
   Head,
 }
 

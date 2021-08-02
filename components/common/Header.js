@@ -30,7 +30,8 @@ export default function Header({ currentTheme }) {
     setTheme(themes[++index])
   }
   return (
-    <div className={`flex items-center justify-center p-5 bg-white dark:bg-gray-900 sticky top-0 z-30 shadow-sm`}>
+    <div className={`flex items-center justify-center p-5 bg-white dark:bg-gray-900 z-30 shadow-sm`}>
+      {/* sticky top-0 */}
       <Link href={'/'}>
         <a className="cursor-pointer">
           <svg width="80" height="50" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">

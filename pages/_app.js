@@ -26,10 +26,12 @@ function MyApp({ Component, pageProps }) {
           <title>uwenayoallain - {path == "" ? "home" : path}</title>
         </Head>
         <div className={`main relative w-full dark:bg-gray-900 dark:text-white ${theme}`} id="main">
-          <Header currentTheme={handleTheme} />
-          <AnimatePresence exitBeforeEnter>
-            <Component {...pageProps} />
-          </AnimatePresence>
+          <div className="relative" aria-label="make header collapse on footer">
+            <Header currentTheme={handleTheme} />
+            <AnimatePresence exitBeforeEnter>
+              <Component {...pageProps} />
+            </AnimatePresence>
+          </div>
           <hr className="dark:border-gray-600" />
           <Footer />
         </div>

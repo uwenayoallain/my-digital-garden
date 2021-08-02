@@ -10,7 +10,7 @@ import SocialCard from '@/components/blog/SocialCard';
 import Image from 'next/image';
 import SubHeading from '@/components/blog/SubHeading';
 import ArrowLink from '@/components/common/ArrowLink';
-import InnerLink from "@/components/common/innerLink";
+import InnerLink, { ButtonLinks } from "@/components/common/innerLink";
 
 const Index = () => {
 
@@ -25,6 +25,7 @@ const Index = () => {
               in Rwanda<Badge>🇷🇼</Badge>. This is my digital garden, where
               I write about the things I'm working on and share what
               I've learned.
+              <ButtonLinks firsthref="/about" firstbutton="About me" />
             </SubHeading>
           </div>
           <div className="w-1/2 h-full">
@@ -44,7 +45,7 @@ const Index = () => {
             <Heading>Uwenayoallain(Yarison allain)</Heading>
             <SubHeading>
               Hi there, I'm a junior developer and a learner at <a href="http://rca.ac.rw/" className="text-skin-base hover:underline">Rwanda coding academy</a>, i am currently learning web techs and working on some <a href="https://github.com/uwenayoallain" className="text-skin-base hover:underline">open source projects.</a>
-              <InnerLink href="/about" content="Read more about me" />
+              <InnerLink href="/about" content="More about me" />
             </SubHeading>
           </div>
         </Section>
@@ -99,8 +100,8 @@ const Index = () => {
           <div className="w-1/2 h-3/4">
             <Heading>My personal blog:</Heading>
             <SubHeading>
-              i like sharing some stuffs that i've gained with others , i use some blogging sites to share those stuffs and gain more traffic so that i make sure that it's helpful. <i>[at least before] </i> <a href="http://dev.to" className="text-skin-base hover:underline">Dev.to</a> is my favorite, check out my blog!
-              <InnerLink href="/blog" content="Read more about my blog" />
+              i like sharing some stuffs that i've gained with others , i use some blogging sites to  gain more traffic  to make sure that i'm being more helpful. <i>[at least before] </i> <a href="http://dev.to" className="text-skin-base hover:underline">Dev.to</a> is my favorite, check out my blog!
+              <InnerLink href="/blog" content="More about my blog" />
             </SubHeading>
           </div>
           <div className="w-1/2 h-full">

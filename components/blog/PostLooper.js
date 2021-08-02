@@ -6,13 +6,12 @@ export default function PostLooper({ posts, defaultSize = 3, nomore = false }) {
     const filteredPosts = (posts.slice(0, size)).sort((a, b) => { return new Date(b.frontMatter.date) - new Date(a.frontMatter.date) });
     return (
         <>
-            <div className="grid grid-cols-3 w-full h-full py-4 px-1 mb-5">
+            <div className="grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5">
                 {filteredPosts.map(post => {
                     const { title, slug, excerpt, by, date, readingTime, counts } = post.frontMatter;
-                    console.log(counts);
                     const postPath = `blog/${slug}`;
                     return (
-                        <div key={slug} className="m-3" >
+                        <div key={slug} className="mb-3 m-1" >
                             <Post
                                 title={title}
                                 path={postPath}
