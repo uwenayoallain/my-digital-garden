@@ -1,4 +1,3 @@
-import { usePageViews } from "@/hooks/useCountpageviews";
 import { useState } from "react";
 import Post from "./Post";
 
@@ -9,7 +8,8 @@ export default function PostLooper({ posts, defaultSize = 3, nomore = false }) {
         <>
             <div className="grid grid-cols-3 w-full h-full py-4 px-1 mb-5">
                 {filteredPosts.map(post => {
-                    const { title, slug, excerpt, by, date, readingTime } = post.frontMatter;
+                    const { title, slug, excerpt, by, date, readingTime, counts } = post.frontMatter;
+                    console.log(counts);
                     const postPath = `blog/${slug}`;
                     return (
                         <div key={slug} className="m-3" >
