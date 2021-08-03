@@ -24,12 +24,12 @@ export default function Blog({ posts }) {
                 <div className='w-1/2 h-full'>
                 </div>
             </Section>
-            <Section title="posts" bg="dark:bg-gray-800 bg-gray-50" className="!h-auto pb-10">
+            <Section title="posts" className="!h-auto pb-10">
                 <div className='w-full h-full'>
-                    <PostLooper posts={posts} defaultSize={3} nomore={false} />
+                    <PostLooper posts={posts} defaultSize={3} sortButton />
                 </div>
             </Section>
-            <Section title="about">
+            <Section title="about" bg="dark:bg-gray-800 bg-gray-50">
                 <div className="w-1/2 h-full">
                 </div>
                 <div className="w-1/2 h-3/4">

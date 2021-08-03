@@ -41,13 +41,16 @@ export default function Header({ currentTheme }) {
           </svg>
         </a>
       </Link>
-      <ActiveLink activeClassName='text-skin-base link before:border-skin-base dark:before:border-skin-base before:scale-x-75' href={"/"}>
+      <ActiveLink activeClassName='text-skin-base before:border-skin-base dark:before:border-skin-base before:scale-x-75' href={"/"}>
         <a href='' className='link'>
           Home
         </a>
       </ActiveLink>
-      <ActiveLink activeClassName='text-skin-base link before:border-skin-base dark:before:border-skin-base before:scale-x-75' href={"/blog"}>
+      <ActiveLink activeClassName='text-skin-base before:border-skin-base dark:before:border-skin-base before:scale-x-75' href={"/blog"}>
         <a className='link'>Blog</a>
+      </ActiveLink>
+      <ActiveLink activeClassName='text-skin-base before:border-skin-base dark:before:border-skin-base before:scale-x-75' href={"/about"}>
+        <a className='link'>About</a>
       </ActiveLink>
       <button
         onClick={() => changeTheme(theme)}

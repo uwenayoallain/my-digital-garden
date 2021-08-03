@@ -1,17 +1,12 @@
 
 export default function Looper(props) {
-    const styles = "px-5 py-2.5 capitalize text-skin-base hover:bg-skin-base m-3 leading-8 rounded"
     return (
         <>
-            <div className={`${props.otherstyles}`} {...props}>
+            <div className={`${props.otherstyles} flex w-full flex-wrap`} {...props} >
                 {
                     props.elements.map((element, key) =>
                     (
-                        <div key={key}>
-                            {
-                                Array.isArray(element) ? <a target="_blank" className={`!no-underline !text-skin-base ${styles}`} href={element[1]}>{element[0]}</a> : <span className={styles}>{element}</span>
-                            }
-                        </div>
+                        Array.isArray(element) ? <a target="_blank" key={key} className={`empty:hidden w-max rounded-full p-3 border font-medium dark:text-white text-gray-900 hover:ring-4 transition mx-1 hover:ring-gray-900 dark:hover:ring-white capitalize ring-0 dark:bg-gray-700 bg-gray-200 border-transparent  my-1 `} href={element[1]}>{element[0]}</a> : <span key={key} className="w-max rounded-full p-3 border font-medium dark:text-white text-gray-900 hover:ring-4 transition mx-1 hover:ring-gray-900 dark:hover:ring-white capitalize ring-0 dark:bg-gray-700 bg-gray-200 border-transparent my-1 empty:hidden">{element}</span>
                     )
                     )
                 }

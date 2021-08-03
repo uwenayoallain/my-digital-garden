@@ -7,10 +7,11 @@ import Section from '@/components/blog/Section';
 import Myimage from "@/public/images/my-image.jpg";
 import Heading from '@/components/blog/Heading';
 import SocialCard from '@/components/blog/SocialCard';
-import Image from 'next/image';
 import SubHeading from '@/components/blog/SubHeading';
 import ArrowLink from '@/components/common/ArrowLink';
 import InnerLink, { ButtonLinks } from "@/components/common/innerLink";
+import Image from 'next/image';
+import Demo from "@/public/images/demo.png";
 
 const Index = () => {
 
@@ -29,7 +30,6 @@ const Index = () => {
             </SubHeading>
           </div>
           <div className="w-1/2 h-full">
-
             <div className='w-36 rounded-full shadow h-36 m-auto'>
               <Image className='rounded-full' src={Myimage} width="300" height="300" draggable="false" />
             </div>
@@ -40,6 +40,9 @@ const Index = () => {
         </Section>
         <Section title="about" bg="dark:bg-gray-800 bg-gray-50">
           <div className="w-1/2 h-full">
+            <div className="">
+              <Image src={Demo} />
+            </div>
           </div>
           <div className="w-1/2 h-3/4">
             <Heading>Uwenayoallain(Yarison allain)</Heading>

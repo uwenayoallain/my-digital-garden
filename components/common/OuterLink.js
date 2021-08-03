@@ -17,8 +17,8 @@ export default function OuterLink(props) {
         },
         hover: {
 
-            x: [null, 10],
-            y: [null, -10],
+            x: [null, 15],
+            y: [null, -15],
             transition: {
                 duration: 0.3,
             }
@@ -35,7 +35,7 @@ export default function OuterLink(props) {
     return (
         <motion.div className={`w-max ${props.otherstyles}`} initial="rest" whileHover="hover" whileTap="tap" animate="rest">
             {
-                <motion.a className={`!no-underline py-4 px-8 flex justify-center items-center cursor-pointer w-max rounded-full bg-black dark:bg-white`} {...props} variants={containerAnimations}>
+                <motion.a className={`!no-underline py-4 px-8 flex justify-center items-center cursor-pointer w-max rounded-full bg-gray-900 dark:text-gray-900 text-gray-100 dark:bg-white hover:ring-4 hover:ring-gray-900 ring-0 transition dark:hover:ring-gray-50  border-4  border-transparent bg-clip-padding mt-10`} {...props} variants={containerAnimations}>
                     <span className="text-white m-2 dark:text-gray-800">{props.title}</span>
                     <motion.div className='inline-block m-3 text-white dark:text-gray-800' variants={iconAnimations} >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" className="w-6 h-6 -rotate-45" viewBox="0 0 24 24" stroke="currentColor">

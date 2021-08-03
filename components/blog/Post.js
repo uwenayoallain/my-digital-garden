@@ -6,7 +6,7 @@ export default function Post({ title, path, excerpt, by, date, readingTime, word
 
   const views = usePageViews(path)
   return (
-    <div className="relative h-full py-20 my-4 mx-2 bg-gray-100 dark:bg-gray-700 p-3 rounded-xl">
+    <div className="relative h-full py-20 my-4 mx-2 bg-gray-100 dark:bg-gray-800 p-3 rounded-xl">
       <div className="w-40 h-40 rounded-full bg-gray-900 dark:bg-white m-auto">
       </div>
       <div className='rounded my-4 mx-2 p-3 leading-8 block cursor-pointer'>

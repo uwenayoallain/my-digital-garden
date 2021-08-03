@@ -5,7 +5,7 @@ import myImage from "@/public/images/my-image.jpg";
 
 export default function Footer() {
     return (
-        <div className="h-screen leading-10 font-medium capitalize relative">
+        <div className="relative h-screen leading-10 font-medium capitalize relativ" id="footer">
             <div className="grid grid-cols-4 pt-[10%] p-6 w-11/12 mx-auto">
                 <div className="text-lg leading-10">
                     <Link href={'/'}>
