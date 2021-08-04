@@ -14,12 +14,11 @@ function MyApp({ Component, pageProps }) {
   const handleTheme = (theme) => {
     setTheme(theme);
   }
-  const path = (useRouter().pathname).replace("/", "");
+  const path = (useRouter().asPath).trim().replace(/#.*/g, "").replace("/", "");
   return (
     <>
       <RecoilRoot>
         <ThemeProvider>
-
           <Head>
             <link rel="manifest" href="./site.webmanifest" />
             <meta name='viewport' content='width=device-width, initial-scale=1.0' />

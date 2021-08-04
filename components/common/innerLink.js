@@ -17,12 +17,12 @@ export const ButtonLinks = ({ firsthref = "/home", lasthref = "/blog", firstbutt
   return (
     <div>
       <Link href={firsthref}>
-        <a className="group mt-12 m-4  inline-block w-max rounded-full py-4 px-12 border-2 border-transparent font-medium dark:text-black transition ring-0 text-gray-100 dark:bg-white hover:ring-4 hover:ring-gray-900 dark:hover:ring-white bg-gray-900 bg-clip-padding" {...otherProps}>
+        <a className="group mt-12 m-4  inline-block w-max rounded-full py-4 px-12 border-4 border-transparent font-medium dark:text-black transition ring-0 text-gray-100 dark:bg-white hover:ring-4 hover:ring-gray-900 dark:hover:ring-white bg-gray-900 bg-clip-padding" {...otherProps}>
           {firstbutton}
         </a>
       </Link>
       <Link href={lasthref}>
-        <a className="group mt-12 m-4 w-max inline-block rounded-full py-4 px-12 border-2 border-gray-900 dark:border-white  font-medium dark:text-white text-gray-900 transition ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white bg-white dark:bg-gray-900" {...otherProps}>
+        <a className="group mt-12 m-4 w-max inline-block rounded-full py-4 px-12 border-4 border-gray-900 dark:border-gray-700 dark:hover:border-gray-500 font-medium dark:text-white text-gray-900 transition ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white bg-white dark:bg-gray-900" {...otherProps}>
           {lastbutton}
         </a>
       </Link>

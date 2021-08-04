@@ -40,9 +40,7 @@ const Index = () => {
         </Section>
         <Section title="about" bg="dark:bg-gray-800 bg-gray-50">
           <div className="w-1/2 h-full">
-            <div className="">
-              <Image src={Demo} />
-            </div>
+            <ImageHolder src={Demo} />
           </div>
           <div className="w-1/2 h-3/4">
             <Heading>Uwenayoallain(Yarison allain)</Heading>

@@ -31,16 +31,12 @@ const About = () => {
                         </SubHeading>
                     </div>
                     <div className="w-1/2 h-full">
-                        <div className="w-1/2 m-auto">
-                            <Image src={Demo} />
-                        </div>
+                        <ImageHolder src={Demo} />
                     </div>
                 </Section>
                 <Section title="about" bg="dark:bg-gray-800 bg-gray-50">
                     <div className="w-1/2 h-full">
-                        <div className="w-1/2 m-auto">
-                            <Image src={Demo} />
-                        </div>
+                        <ImageHolder src={Demo} />
                     </div>
                     <div className="w-1/2 h-3/4">
                         <Heading>Just still learning</Heading>
@@ -60,16 +56,12 @@ const About = () => {
                         </SubHeading>
                     </div>
                     <div className="w-1/2 h-full">
-                        <div className="w-1/2 m-auto">
-                            <Image src={Demo} />
-                        </div>
+                        <ImageHolder src={Demo} />
                     </div>
                 </Section>
                 <Section title="programming" bg="dark:bg-gray-800 bg-gray-50 h-auto">
                     <div className="w-1/2 h-full">
-                        <div className="w-1/2 m-auto">
-                            <Image src={Demo} />
-                        </div>
+                        <ImageHolder src={Demo} />
                     </div>
                     <div className="w-1/2 h-3/4" >
                         <Heading>Tools i mostly use</Heading>
@@ -114,9 +106,7 @@ const About = () => {
                         </SubHeading>
                     </div>
                     <div className="w-1/2 h-full">
-                        <div className="w-1/2 m-auto">
-                            <Image src={Demo} />
-                        </div>
+                        <ImageHolder src={Demo} />
                     </div>
                 </Section>
             </div>

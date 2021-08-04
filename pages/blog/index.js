@@ -1,12 +1,15 @@
 import Header from "@/components/blog/Header";
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 import Container from '@/components/simplifiers/Container';
+import Demo from "@/public/images/demo.png";
 import PostLooper from '@/components/blog/PostLooper';
 import Section from "@/components/blog/Section";
 import Heading from "@/components/blog/Heading";
 import SubHeading from "@/components/blog/SubHeading";
 import InnerLink, { ButtonLinks } from "@/components/common/innerLink";
 import ArrowLink from "@/components/common/ArrowLink";
+import Image from "next/image";
+import ImageHolder from "@/components/common/ImageHolder";
 export default function Blog({ posts }) {
     return (
         <Container>
@@ -22,6 +25,7 @@ export default function Blog({ posts }) {
                     </SubHeading>
                 </div>
                 <div className='w-1/2 h-full'>
+                    <ImageHolder src={Demo} />
                 </div>
             </Section>
             <Section title="posts" className="!h-auto pb-10">
@@ -31,6 +35,7 @@ export default function Blog({ posts }) {
             </Section>
             <Section title="about" bg="dark:bg-gray-800 bg-gray-50">
                 <div className="w-1/2 h-full">
+                    <ImageHolder src={Demo} />
                 </div>
                 <div className="w-1/2 h-3/4">
                     <Heading>Every one has a life story to share,me too.</Heading>

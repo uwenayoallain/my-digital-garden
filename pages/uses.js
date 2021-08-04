@@ -12,6 +12,7 @@ import ArrowLink from '@/components/common/ArrowLink';
 import InnerLink, { ButtonLinks } from "@/components/common/innerLink";
 import Image from 'next/image';
 import Demo from "@/public/images/demo.png";
+import ImageHolder from '@/components/common/ImageHolder';
 
 const About = () => {
 
@@ -28,16 +29,12 @@ const About = () => {
                         </SubHeading>
                     </div>
                     <div className="w-1/2 h-full">
-                        <div className="w-1/2 m-auto">
-                            <Image src={Demo} />
-                        </div>
+                        <ImageHolder src={Demo} />
                     </div>
                 </Section>
                 <Section title="programming" bg="dark:bg-gray-800 bg-gray-50 h-auto">
                     <div className="w-1/2 h-full">
-                        <div className="w-1/2 m-auto">
-                            <Image src={Demo} />
-                        </div>
+                        <ImageHolder src={Demo} />
                     </div>
                     <div className="w-1/2 h-3/4" >
                         <Heading>Tools i mostly use[programming languages]</Heading>
@@ -80,9 +77,7 @@ const About = () => {
                         </SubHeading>
                     </div>
                     <div className="w-1/2 h-full">
-                        <div className="w-1/2 m-auto">
-                            <Image src={Demo} />
-                        </div>
+                        <ImageHolder src={Demo} />
                     </div>
                 </Section>
             </div>
