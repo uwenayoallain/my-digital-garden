@@ -30,7 +30,9 @@ export default function Blog({ posts }) {
             </Section>
             <Section title="posts" className="!h-auto pb-10">
                 <div className='w-full h-full'>
-                    <PostLooper posts={posts} defaultSize={3} sortButton />
+                    <Heading>Blog Posts</Heading>
+                    {/* <SubHeading>Search for blog posts by name or tags</SubHeading> */}
+                    <PostLooper posts={posts} defaultSize={3} sortButton controlls />
                 </div>
             </Section>
             <Section title="about" bg="dark:bg-gray-800 bg-gray-50">
@@ -53,7 +55,7 @@ export async function getStaticProps() {
     const posts = await getAllFilesFrontMatter();
     return {
         props: {
-            posts
+            posts,
         },
     }
 }

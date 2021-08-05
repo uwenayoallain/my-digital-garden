@@ -1,3 +1,4 @@
+import { useState } from "react"
 
 export default function Looper(props) {
     return (
@@ -11,6 +12,31 @@ export default function Looper(props) {
                     )
                 }
             </div>
+        </>
+    )
+}
+
+
+export function TagsLooper(props) {
+    return (
+        <>
+            <div className={`${props.otherstyles} flex w-full flex-wrap`} {...props} >
+                {props.elements.map((element, key) => <Button element={element} key={key} />)
+                }
+            </div>
+        </>
+    )
+}
+
+
+export const Button = ({ key, element }) => {
+    const [styles, setStyles] = useState("");
+    const change = () => {
+        styles === "" ? setStyles("dark:text-gray-900 text-white hover:ring-gray-900 dark:hover:ring-white dark:bg-gray-200 bg-gray-700") : setStyles("")
+    }
+    return (
+        <>
+            <button key={key} className={`${styles} cursor-pointer w-max rounded-full p-3 border-transparent empty:hidden border capitalize ring-0 hover:ring-4 transition m-1 dark:text-white text-gray-900 hover:ring-gray-900 dark:hover:ring-white dark:bg-gray-700 bg-gray-200`} onClick={() => change()} id={key}>{element}</button>
         </>
     )
 }

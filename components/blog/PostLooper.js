@@ -2,9 +2,10 @@
 import { blogPosts, sortedPosts } from "@/utils/recoil";
 import { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
+import Looper, { TagsLooper } from "../simplifiers/Looper";
 import Post from "./Post";
 
-export default function PostLooper({ posts, defaultSize = 3, nomore = false, feacturedposts = false, sortButton = false }) {
+export default function PostLooper({ posts, defaultSize = 3, nomore = false, feacturedposts = false, controlls = false }) {
     const [updatedpostsState, setUpdatedpostsState] = useRecoilState(blogPosts);
     setUpdatedpostsState(posts);
     const sorts = ["date", "views"];
@@ -12,7 +13,8 @@ export default function PostLooper({ posts, defaultSize = 3, nomore = false, fea
     const [size, setSize] = useState(defaultSize);
     const sortedblogPosts = useRecoilValue(sortedPosts(sort));
     const filteredPosts = (sortedblogPosts.slice(0, size));
-
+    const tags = updatedpostsState.map(post => post.frontMatter.tags.toString());
+    const uniqueTags = [...new Set([tags].toString().trim().split(','))]
     return (
         <div>
             <div>
@@ -22,6 +24,9 @@ export default function PostLooper({ posts, defaultSize = 3, nomore = false, fea
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
                     </svg>
                 </button>
+            </div>
+            <div className="w-full m-5">
+                {controlls && <TagsLooper elements={uniqueTags} />}
             </div>
             <div className="grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5">
                 {filteredPosts.map(post => {

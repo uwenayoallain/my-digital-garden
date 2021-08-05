@@ -1,6 +1,6 @@
 export default function Text({ children, otherstyles }) {
     return (
-        <p className={`my-8 mx-3 leading-9 ${otherstyles}`}>
+        <p className={`!text-gray-500 dark:!text-gray-600 ${otherstyles}`}>
             {children}
         </p>
     )

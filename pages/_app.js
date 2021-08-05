@@ -8,6 +8,8 @@ import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "@/utils/Themes";
 import { RecoilRoot } from "recoil";
+import { DefaultSeo } from "next-seo";
+import { Seo } from "next-seo.config";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState('');
@@ -18,6 +20,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <RecoilRoot>
+        <DefaultSeo {...Seo} />
         <ThemeProvider>
           <Head>
             <link rel="manifest" href="./site.webmanifest" />
