@@ -8,6 +8,14 @@ export const FormInput = ({ label, type, ...props }) => {
         </div>
     )
 }
+export const FormSearchInput = ({ label, type, ...props }) => {
+    const id = label.trim().replace(" ", "").toLowerCase();
+    return (
+        <div className="relative mt-4" {...props}>
+            <input type={type} name={id} id={id} placeholder={label} className="w-5/6 my-5 mx-1 p-8 rounded-full border placeholder-gray-400 border-gray-400 !bg-transparent " autoComplete={label} />
+        </div>
+    )
+}
 
 export const Form = ({ children, ...props }) => {
     return (

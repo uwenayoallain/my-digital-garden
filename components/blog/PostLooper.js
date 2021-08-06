@@ -2,6 +2,7 @@
 import { blogPosts, sortedPosts } from "@/utils/recoil";
 import { useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
+import { FormSearchInput } from "../simplifiers/Form";
 import Looper, { TagsLooper } from "../simplifiers/Looper";
 import Post from "./Post";
 
@@ -17,16 +18,19 @@ export default function PostLooper({ posts, defaultSize = 3, nomore = false, fea
     const uniqueTags = [...new Set([tags].toString().trim().split(','))]
     return (
         <div>
+            <div className="w-1/2">
+                {controlls && <FormSearchInput type="search" label="Your Email" />}
+            </div>
+            <div className="w-full m-5">
+                {controlls && <TagsLooper elements={uniqueTags} />}
+            </div>
             <div>
-                <button className="block m-auto w-max my-2 py-2  px-5 rounded-full border bg-gray-900 text-white dark:bg-white dark:text-black ring-0 transition hover:ring-4 hover:ring-gray-900 dark:hover:ring-gray-700" onClick={() => setSort(!sort || sort === sorts[0] ? sorts[1] : sorts[0])}>
+                <button className="block transition m-auto w-max my-2 py-2 px-5 rounded-full border border-white dark:border-gray-900 bg-gray-900 text-white dark:bg-white dark:text-black ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white" onClick={() => setSort(!sort || sort === sorts[0] ? sorts[1] : sorts[0])}>
                     {sort === sorts[0] ? "sorting by newest" : "sorting by most popular"}
                     <svg xmlns="http://www.w3.org/2000/svg" className="inline-block w-6 h-6 rotate-0 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
                     </svg>
                 </button>
-            </div>
-            <div className="w-full m-5">
-                {controlls && <TagsLooper elements={uniqueTags} />}
             </div>
             <div className="grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5">
                 {filteredPosts.map(post => {
