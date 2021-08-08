@@ -32,7 +32,7 @@ export default function Blog({ posts }) {
                 <div className='w-full h-full'>
                     <Heading>Blog Posts</Heading>
                     {/* <SubHeading>Search for blog posts by name or tags</SubHeading> */}
-                    <PostLooper posts={posts} defaultSize={3} sortButton controlls />
+                    <PostLooper posts={posts} />
                 </div>
             </Section>
             <Section title="about" bg="dark:bg-gray-800 bg-gray-50">

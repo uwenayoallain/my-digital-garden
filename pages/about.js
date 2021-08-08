@@ -1,20 +1,16 @@
 import PageLayout from '@/layouts/page'
-import Blockquote from "@/components/blog/Quote";
 import Looper from "@/components/simplifiers/Looper";
 import Badge from "@/components/blog/Badge";
 import OuterLink from '@/components/common/OuterLink';
 import Section from '@/components/blog/Section';
-import Myimage from "@/public/images/my-image.jpg";
 import Heading from '@/components/blog/Heading';
-import SocialCard from '@/components/blog/SocialCard';
 import SubHeading from '@/components/blog/SubHeading';
 import ArrowLink from '@/components/common/ArrowLink';
 import InnerLink, { ButtonLinks } from "@/components/common/innerLink";
-import Image from 'next/image';
 import Demo from "@/public/images/demo.png";
+import ImageHolder from '@/components/common/ImageHolder';
 
 const About = () => {
-
     return (
         <PageLayout>
             <div>

@@ -10,6 +10,12 @@ export function usePageViews(path) {
     }, [namespace, key])
     return views
 }
+export async function getPageViews(path) {
+    const namespace = "uwenayoallain.com"
+    const key = (`blog/${path}`).replace('\\', "").replace('/', "")
+    const counts = await countAPI.get(namespace, key)
+    return Number(counts.value);
+}
 
 export function useCountPageView(path) {
     const [views, setViews] = React.useState("---")
