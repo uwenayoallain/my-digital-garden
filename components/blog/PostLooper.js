@@ -1,69 +1,169 @@
-
-import { getPageViews, usePageViews } from "@/hooks/useCountpageviews";
 import { useEffect, useState } from "react";
 import { FormSearchInput } from "../simplifiers/Form";
-import Looper, { TagsLooper } from "../simplifiers/Looper";
+import { TagsLooper } from "../simplifiers/Looper";
+import Heading from "./Heading";
 import Post from "./Post";
+import Section from "@/components/blog/Section";
+import SubHeading from "./SubHeading";
+import Demo from "@/public/images/demo.png";
+import ImageHolder from "@/components/common/ImageHolder";
 
-export default function PostLooper({ posts, defaultSize = 3, nomore = false, feacturedposts = false }) {
-    const [blogPosts, setblogPosts] = useState(posts);
-    const sorts = ["date", "views"];
-    const [sort, setSort] = useState(sorts[0]);
-    useEffect(() => {
-        if (sort === sorts[0]) {
-            setblogPosts(posts.slice().sort((a, b) => { return new Date(b.frontMatter.date) - new Date(a.frontMatter.date) }))
-        } else if (sort === sorts[1]) {
-            setblogPosts(posts.slice().sort((a, b) => { return Number(b.frontMatter.counts) - Number(a.frontMatter.counts) }));
-        }
-    }, [sort, posts]);
-
-    const tags = posts.map(post => post.frontMatter.tags.toString());
-    const uniqueTags = [...new Set([tags].toString().trim().split(','))]
-    const [size, setSize] = useState(defaultSize);
-    const filteredPosts = (blogPosts.slice(0, size));
-    const [search, setSearch] = useState('');
-    const handleSearchingByTags = (tags) => {
-        setSearch(tags.trimStart().trimEnd())
+export default function PostLooper({
+  posts,
+  defaultSize = 6,
+  nomore = false,
+  feacturedposts = false,
+}) {
+  const [blogPosts, setblogPosts] = useState(posts);
+  const sorts = ["date", "views"];
+  const [sort, setSort] = useState(sorts[0]);
+  useEffect(() => {
+    if (sort === sorts[0]) {
+      setblogPosts(
+        posts.slice().sort((a, b) => {
+          return new Date(b.frontMatter.date) - new Date(a.frontMatter.date);
+        })
+      );
+    } else if (sort === sorts[1]) {
+      setblogPosts(
+        posts.slice().sort((a, b) => {
+          return Number(b.frontMatter.counts) - Number(a.frontMatter.counts);
+        })
+      );
     }
-    console.log(search);
-    return (
-        <div>
-            <div className="w-1/2">
-                <FormSearchInput value={search} onChange={(e) => setSearch(e.target.value)} type="search" label="Search the blog" />
+  }, [sort, posts]);
+
+  const tags = posts.map((post) => post.frontMatter.tags.toString());
+  const uniqueTags = [...new Set([tags].toString().trim().split(","))];
+  const [searchValue, setSearchValue] = useState("");
+  const [size, setSize] = useState(defaultSize);
+  const filterbyfeatured = blogPosts.filter((post) => {
+    if (feacturedposts) {
+      return post.frontMatter.featured;
+    } else {
+      return !post.frontMatter.featured;
+    }
+  });
+  const postsBeforeFilter = filterbyfeatured.filter(
+    (post) =>
+      post.frontMatter.title
+        .toLowerCase()
+        .includes(searchValue.toLowerCase()) ||
+      post.frontMatter.tags
+        .toString()
+        .toLowerCase()
+        .includes(searchValue.toLowerCase())
+  );
+  const filteredPosts = postsBeforeFilter.slice(0, size);
+  const handleSearchingByTags = (tags) => {
+    setSearchValue(tags.trimStart().trimEnd());
+  };
+  return (
+    <div>
+      <div className='w-1/2'>
+        <SubHeading>Search the blog using keywords or category</SubHeading>
+        <FormSearchInput
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          type='text'
+          label='Search the blog'
+        />
+      </div>
+      <div className='w-full m-5'>
+        <TagsLooper
+          elements={uniqueTags}
+          searchContent={handleSearchingByTags}
+        />
+      </div>
+      <div>
+        {filteredPosts.length > 2 && (
+          <button
+            className='block px-5 py-2 m-auto my-2 text-white transition bg-gray-900 border border-white rounded-full w-max dark:border-gray-900 dark:bg-white dark:text-black ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white'
+            onClick={() =>
+              setSort(!sort || sort === sorts[0] ? sorts[1] : sorts[0])
+            }>
+            {sort === sorts[0]
+              ? "sorting by newest"
+              : "sorting by most popular"}
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='inline-block w-6 h-6 transition rotate-0'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'>
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
+                d='M8 9l4-4 4 4m0 6l-4 4-4-4'
+              />
+            </svg>
+          </button>
+        )}
+      </div>
+      <div className='grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5'>
+        {filteredPosts.map((post) => {
+          const { title, slug, excerpt, by, date, readingTime, counts } =
+            post.frontMatter;
+          const postPath = `blog/${slug}`;
+          return (
+            <div key={slug} className='m-1 mb-3'>
+              <Post
+                title={title}
+                path={postPath}
+                excerpt={excerpt}
+                by={by}
+                counts={counts}
+                readingTime={readingTime.text}
+                words={readingTime.words}
+                date={date}
+              />
             </div>
-            <div className="w-full m-5">
-                <TagsLooper elements={uniqueTags} searchContent={handleSearchingByTags} />
-            </div>
-            <div>
-                <button className="block px-5 py-2 m-auto my-2 text-white transition bg-gray-900 border border-white rounded-full w-max dark:border-gray-900 dark:bg-white dark:text-black ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white" onClick={() => setSort(!sort || sort === sorts[0] ? sorts[1] : sorts[0])}>
-                    {sort === sorts[0] ? "sorting by newest" : "sorting by most popular"}
-                    <svg xmlns="http://www.w3.org/2000/svg" className="inline-block w-6 h-6 transition rotate-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
-                    </svg>
-                </button>
-            </div>
-            <div className="grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5">
-                {filteredPosts.map(post => {
-                    const { title, slug, excerpt, by, date, readingTime, counts } = post.frontMatter;
-                    const postPath = `blog/${slug}`;
-                    return (
-                        <div key={slug} className="m-1 mb-3" >
-                            <Post
-                                title={title}
-                                path={postPath}
-                                excerpt={excerpt}
-                                by={by}
-                                counts={counts}
-                                readingTime={readingTime.text}
-                                words={readingTime.words}
-                                date={date} />
-                        </div>
-                    )
-                })}
-            </div>
-            {
-                filteredPosts.length < posts.length && !nomore ? <button className="block px-4 py-3 mx-auto mt-10 mb-5 text-white transition bg-gray-900 border rounded-full w-max dark:bg-white dark:text-black ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-gray-700 " onClick={() => { return setSize(10) }} >all posts</button> : ''
-            }
-        </div>
-    )
+          );
+        })}
+      </div>
+      {!filteredPosts.length && (
+        <Section>
+          <div className='w-1/2 h-3/4'>
+            <Heading>
+              <span className=''>
+                4<span className='text-skin-base'>0</span>4
+              </span>
+              <span>| Page Not Found</span>
+            </Heading>
+            <SubHeading>
+              It looks like{" "}
+              <span className='text-skin-base'>`{searchValue}`</span> , the
+              search keyword you use did not match any post. but you can try
+              using a{" "}
+              <a
+                href='#search the blog'
+                className='text-skin-base hover:underline '>
+                different keyword or the categories above
+              </a>
+              .
+            </SubHeading>
+          </div>
+          <div className='w-1/2 h-full'>
+            <ImageHolder src={Demo} />
+          </div>
+        </Section>
+      )}
+      {filteredPosts.length &&
+        filteredPosts.length < postsBeforeFilter.length &&
+        !nomore && (
+          <button
+            className='block px-4 py-3 mx-auto mt-10 mb-5 text-white transition bg-gray-900 border rounded-full w-max dark:bg-white dark:text-black ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-gray-700'
+            onClick={() => {
+              return setSize(
+                defaultSize > filteredPosts.lenggth
+                  ? filteredPosts.length
+                  : defaultSize
+              );
+            }}>
+            Load more posts
+          </button>
+        )}
+    </div>
+  );
 }

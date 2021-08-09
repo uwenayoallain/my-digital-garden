@@ -31,7 +31,6 @@ export default function Blog({ posts }) {
             <Section title="posts" className="!h-auto pb-10">
                 <div className='w-full h-full'>
                     <Heading>Blog Posts</Heading>
-                    {/* <SubHeading>Search for blog posts by name or tags</SubHeading> */}
                     <PostLooper posts={posts} />
                 </div>
             </Section>
