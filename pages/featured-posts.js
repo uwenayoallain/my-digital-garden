@@ -15,22 +15,38 @@ export default function FeaturedPosts({ posts }) {
     <PageLayout>
       <Section title='heading'>
         <div className='w-1/2 h-3/4'>
-          <Heading>I'm uwenayoallain</Heading>
+          <Heading>Featured Posts</Heading>
           <SubHeading>
-            I am a developer, a blogger and an open source lover based in Rwanda
-            . This is my digital garden, where I write about the things I'm
-            working on and share what I've learned.
+            Featured posts are blog posts with higher visibility and they are
+            more important than regular posts.
             <ButtonLinks />
-            <ArrowLink direction='bottom' to='#about' />
+            <ArrowLink direction='bottom' to='#featured-posts' />
           </SubHeading>
         </div>
         <div className='w-1/2 h-full'>
           <ImageHolder src={Demo} />
         </div>
       </Section>
-      <Section title='more' className='!h-auto pb-10'>
+      <Section title='featured-posts' className='!h-auto pb-10'>
         <div className='w-full h-full'>
           <PostLooper posts={posts} nomore feacturedposts />
+        </div>
+      </Section>
+      <Section title='actions'>
+        <div className='w-1/2 h-3/4'>
+          <Heading>Action Tracker</Heading>
+          <SubHeading>
+            I'm just going to develop an action tracker for my open source
+            projects just as a reminder and personal monitoring. check more
+            about how the action tracker works here.
+            <InnerLink
+              href='/opensource/action-tracker'
+              content='More about how i track my actions'
+            />
+          </SubHeading>
+        </div>
+        <div className='w-1/2 h-full'>
+          <ImageHolder src={Demo} />
         </div>
       </Section>
     </PageLayout>

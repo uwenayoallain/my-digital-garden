@@ -84,10 +84,6 @@ export default function PostLooper({
         <>
           <div className='w-1/2'>
             <Heading>Featured Posts</Heading>
-            {/* <SubHeading>
-              Featured posts are blog posts with higher visibility and they are
-              more important than regular posts.
-            </SubHeading> */}
           </div>
         </>
       )}

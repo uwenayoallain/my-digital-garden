@@ -73,8 +73,8 @@ export default function Footer() {
             </Link>
           </div>
           <div>
-            <Link href={"/sitemap"}>
-              <a className='link'>Sitemap</a>
+            <Link href={"/allpages"}>
+              <a className='link'>All Pages</a>
             </Link>
           </div>
         </div>
