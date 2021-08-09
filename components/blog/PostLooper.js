@@ -78,7 +78,7 @@ export default function PostLooper({
       <div>
         {filteredPosts.length > 2 && (
           <button
-            className='block px-5 py-2 m-auto my-2 text-white transition bg-gray-900 border border-white rounded-full w-max dark:border-gray-900 dark:bg-white dark:text-black ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white'
+            className='block px-5 py-2 m-auto my-2 text-white transition bg-gray-900 border border-white rounded-full w-max dark:border-gray-900 dark:bg-white dark:text-gray-900 ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white'
             onClick={() =>
               setSort(!sort || sort === sorts[0] ? sorts[1] : sorts[0])
             }>
@@ -125,12 +125,7 @@ export default function PostLooper({
       {!filteredPosts.length && (
         <Section>
           <div className='w-1/2 h-3/4'>
-            <Heading>
-              <span className=''>
-                4<span className='text-skin-base'>0</span>4
-              </span>
-              <span>| Page Not Found</span>
-            </Heading>
+            <Heading>Nothing Found for `{searchValue}`</Heading>
             <SubHeading>
               It looks like{" "}
               <span className='text-skin-base'>`{searchValue}`</span> , the
@@ -153,7 +148,7 @@ export default function PostLooper({
         filteredPosts.length < postsBeforeFilter.length &&
         !nomore && (
           <button
-            className='block px-4 py-3 mx-auto mt-10 mb-5 text-white transition bg-gray-900 border rounded-full w-max dark:bg-white dark:text-black ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-gray-700'
+            className='block px-4 py-3 mx-auto mt-10 mb-5 text-white transition bg-gray-900 border-4 border-white rounded-full dark:border-gray-900 w-max dark:bg-white dark:text-black ring-0 hover:ring-4 dark:ring-white ring-gray-900'
             onClick={() => {
               return setSize(
                 defaultSize > filteredPosts.lenggth

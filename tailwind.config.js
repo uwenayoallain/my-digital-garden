@@ -1,14 +1,19 @@
 function withOpacity(varaibleName) {
   return ({ opacityValue }) => {
     if (opacityValue !== undefined) {
-      return `rgba(var(${varaibleName}),${opacityValue})`
+      return `rgba(var(${varaibleName}),${opacityValue})`;
     }
-    return `rgb(var(${varaibleName}))`
-  }
+    return `rgb(var(${varaibleName}))`;
+  };
 }
 module.exports = {
   mode: "jit",
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "./layouts/**/*.{js,ts,jsx,tsx}", "./styles/**/*.{css}"],
+  purge: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./layouts/**/*.{js,ts,jsx,tsx}",
+    "./styles/**/*.{css}",
+  ],
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
@@ -24,10 +29,16 @@ module.exports = {
           inverted: withOpacity("--text-color-base"),
         },
       },
+      ringColor: {
+        skin: {
+          base: withOpacity("--border-color-base"),
+          inverted: withOpacity("--background-color-base"),
+        },
+      },
       borderColor: {
         skin: {
           base: withOpacity("--border-color-base"),
-          inverted: withOpacity("--background-color-base")
+          inverted: withOpacity("--background-color-base"),
         },
       },
     },
@@ -35,7 +46,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/typography', '@tailwindcss/forms')
-  ],
+  plugins: [require("@tailwindcss/typography", "@tailwindcss/forms")],
 };
