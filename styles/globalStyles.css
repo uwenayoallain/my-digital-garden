@@ -19,28 +19,22 @@ div.main {
 
 input:hover,
 input:focus {
-  @apply outline-none border-black dark:border-white;
+  @apply border-black outline-none dark:border-white;
 }
-/* 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: gray;
-  -webkit-box-shadow: 0 0 0px 1000px #ccc inset;
-  box-shadow: 0 0 0px 1000px #ccc inset;
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #64748b;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
-} */
+}
+
 .-z-index {
   z-index: -1 !important;
 }
 ::selection {
-  @apply text-white  bg-skin-inverted;
+  @apply text-white bg-skin-inverted;
   text-shadow: none;
 }
 
@@ -74,7 +68,7 @@ div.main {
 }
 
 blockquote {
-  @apply relative border-l-4 border-skin-base pl-6 p-5 leading-7 rounded m-3 bg-skin-base;
+  @apply relative p-5 pl-6 m-3 leading-7 border-l-4 rounded border-skin-base bg-skin-base;
 }
 
 blockquote::after {
@@ -93,21 +87,21 @@ h1:hover a::before,
 h2:hover a::before,
 h3:hover a::before,
 h4:hover a::before {
-  @apply text-gray-400 absolute -right-5;
+  @apply absolute text-gray-400 -right-5;
   content: "#";
 }
 h1 > a:hover::before,
 h2 > a:hover::before,
 h3 > a:hover::before,
 h4 > a:hover::before {
-  @apply text-gray-600 absolute -right-5;
+  @apply absolute text-gray-600 -right-5;
   content: "#";
 }
 h1 > a:focus::before,
 h2 > a:focus::before,
 h3 > a:focus::before,
 h4 > a:focus::before {
-  @apply text-skin-base absolute -right-5;
+  @apply absolute text-skin-base -right-5;
   content: "#";
 }
 a {

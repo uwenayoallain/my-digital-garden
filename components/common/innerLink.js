@@ -72,7 +72,7 @@ export const ButtonLinks = ({
       </Link>
       <Link href={lasthref}>
         <a
-          className='inline-block px-12 py-4 m-4 mt-12 font-medium text-gray-900 transition bg-white border-4 border-gray-900 rounded-full group w-max dark:border-gray-700 dark:hover:border-gray-500 dark:text-white ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white dark:bg-gray-900'
+          className='inline-block px-12 py-4 m-4 mt-12 font-medium text-gray-900 transition bg-white border-4 border-gray-900 rounded-full group w-max dark:border-gray-700 dark:hover:border-gray-900 dark:text-white ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white dark:bg-gray-900'
           {...otherProps}>
           {lastbutton}
         </a>

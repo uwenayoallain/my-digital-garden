@@ -48,11 +48,11 @@ export default function PostLooper({
     (post) =>
       post.frontMatter.title
         .toLowerCase()
-        .includes(searchValue.toLowerCase()) ||
+        .includes(searchValue.trimEnd().trimStart().toLowerCase()) ||
       post.frontMatter.tags
         .toString()
         .toLowerCase()
-        .includes(searchValue.toLowerCase())
+        .includes(searchValue.trimEnd().trimStart().toLowerCase())
   );
   const filteredPosts = postsBeforeFilter.slice(0, size);
   const handleSearchingByTags = (tags) => {
@@ -66,6 +66,7 @@ export default function PostLooper({
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           type='text'
+          Items={filteredPosts.length}
           label='Search the blog'
         />
       </div>
@@ -125,11 +126,11 @@ export default function PostLooper({
       {!filteredPosts.length && (
         <Section>
           <div className='w-1/2 h-3/4'>
-            <Heading>Nothing Found for `{searchValue}`</Heading>
+            <Heading>Nothing Found in the blog</Heading>
             <SubHeading>
               It looks like{" "}
-              <span className='text-skin-base'>`{searchValue}`</span> , the
-              search keyword you use did not match any post. but you can try
+              <span className='text-skin-base'>`{searchValue.trim()}`</span> ,
+              the search keyword you use did not match any post. but you can try
               using a{" "}
               <a
                 href='#search the blog'
@@ -150,11 +151,11 @@ export default function PostLooper({
           <button
             className='block px-4 py-3 mx-auto mt-10 mb-5 text-white transition bg-gray-900 border-4 border-white rounded-full dark:border-gray-900 w-max dark:bg-white dark:text-black ring-0 hover:ring-4 dark:ring-white ring-gray-900'
             onClick={() => {
-              return setSize(
-                defaultSize > filteredPosts.lenggth
-                  ? filteredPosts.length
-                  : defaultSize
-              );
+              if (defaultSize > filteredPosts.length) {
+                setSize(filteredPosts.length);
+              } else {
+                setSize(2 * defaultSize);
+              }
             }}>
             Load more posts
           </button>
