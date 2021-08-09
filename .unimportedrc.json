@@ -1,0 +1,23 @@
+{
+  "ignoreUnresolved": [
+    "next-seo.config"
+  ],
+  "ignoreUnused": [
+    "next",
+    "react",
+    "react-dom"
+  ],
+  "ignoreUnimported": [
+    "next-seo.config.js",
+    "pages/404.js",
+    "pages/_app.js",
+    "pages/about.js",
+    "pages/blog/[slug].js",
+    "pages/blog/index.js",
+    "pages/featured-posts.js",
+    "pages/index.js",
+    "pages/uses.js",
+    "postcss.config.js",
+    "tailwind.config.js"
+  ]
+}

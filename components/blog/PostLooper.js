@@ -31,53 +31,68 @@ export default function PostLooper({
         })
       );
     }
-  }, [sort, posts]);
+
+    if (feacturedposts) {
+      setblogPosts(
+        blogPosts.filter((post) => post.frontMatter.featured === true)
+      );
+    } else {
+      setblogPosts(blogPosts.filter((post) => !post.frontMatter.featured));
+    }
+  }, [sort, posts, feacturedposts]);
 
   const tags = posts.map((post) => post.frontMatter.tags.toString());
   const uniqueTags = [...new Set([tags].toString().trim().split(","))];
   const [searchValue, setSearchValue] = useState("");
   const [size, setSize] = useState(defaultSize);
-  const filterbyfeatured = blogPosts.filter((post) => {
-    if (feacturedposts) {
-      return post.frontMatter.featured;
-    } else {
-      return !post.frontMatter.featured;
-    }
-  });
-  const postsBeforeFilter = filterbyfeatured.filter(
+  const postsBeforeFilter = blogPosts.filter(
     (post) =>
       post.frontMatter.title
         .toLowerCase()
-        .includes(searchValue.trimEnd().trimStart().toLowerCase()) ||
+        .includes(searchValue.trim().toLowerCase()) ||
       post.frontMatter.tags
         .toString()
         .toLowerCase()
-        .includes(searchValue.trimEnd().trimStart().toLowerCase())
+        .includes(searchValue.trim().toLowerCase())
   );
   const filteredPosts = postsBeforeFilter.slice(0, size);
   const handleSearchingByTags = (tags) => {
-    setSearchValue(tags.trimStart().trimEnd());
+    setSearchValue(tags.trim());
   };
   return (
     <div>
-      <div className='w-1/2'>
-        <SubHeading>Search the blog using keywords or category</SubHeading>
-        <FormSearchInput
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-          type='text'
-          Items={filteredPosts.length}
-          label='Search the blog'
-        />
-      </div>
-      <div className='w-full m-5'>
-        <TagsLooper
-          elements={uniqueTags}
-          searchContent={handleSearchingByTags}
-        />
-      </div>
+      {!feacturedposts ? (
+        <>
+          <div className='w-1/2'>
+            <SubHeading>Search the blog using keywords or category</SubHeading>
+            <FormSearchInput
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              type='text'
+              Items={filteredPosts.length}
+              label='Search the blog'
+            />
+          </div>
+          <div className='w-full m-5'>
+            <TagsLooper
+              elements={uniqueTags}
+              searchContent={handleSearchingByTags}
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className='w-1/2'>
+            <Heading>Featured Posts</Heading>
+            {/* <SubHeading>
+              Featured posts are blog posts with higher visibility and they are
+              more important than regular posts.
+            </SubHeading> */}
+          </div>
+        </>
+      )}
       <div>
-        {filteredPosts.length > 2 && (
+        {!feacturedposts && filteredPosts.length > 2 && (
           <button
             className='block px-5 py-2 m-auto my-2 text-white transition bg-gray-900 border border-white rounded-full w-max dark:border-gray-900 dark:bg-white dark:text-gray-900 ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white'
             onClick={() =>
@@ -102,48 +117,66 @@ export default function PostLooper({
           </button>
         )}
       </div>
-      <div className='grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5'>
-        {filteredPosts.map((post) => {
-          const { title, slug, excerpt, by, date, readingTime, counts } =
-            post.frontMatter;
-          const postPath = `blog/${slug}`;
-          return (
-            <div key={slug} className='m-1 mb-3'>
-              <Post
-                title={title}
-                path={postPath}
-                excerpt={excerpt}
-                by={by}
-                counts={counts}
-                readingTime={readingTime.text}
-                words={readingTime.words}
-                date={date}
-              />
-            </div>
-          );
-        })}
-      </div>
-      {!filteredPosts.length && (
+      {!filteredPosts.length ? (
         <Section>
           <div className='w-1/2 h-3/4'>
             <Heading>Nothing Found in the blog</Heading>
-            <SubHeading>
-              It looks like{" "}
-              <span className='text-skin-base'>`{searchValue.trim()}`</span> ,
-              the search keyword you use did not match any post. but you can try
-              using a{" "}
-              <a
-                href='#search the blog'
-                className='text-skin-base hover:underline '>
-                different keyword or the categories above
-              </a>
-              .
-            </SubHeading>
+            {searchValue != "" ? (
+              <SubHeading>
+                It looks like{" "}
+                <span className='text-skin-base'>`{searchValue.trim()}`</span> ,
+                the search keyword you use did not match any post. but you can
+                try using a{" "}
+                <a
+                  href='#search the blog'
+                  className='text-skin-base hover:underline '>
+                  different keyword or the categories above
+                </a>
+                .
+              </SubHeading>
+            ) : (
+              <>
+                <SubHeading>
+                  It looks like there is no content on the blog and it's not
+                  based on a search, if this is not a development site you need
+                  to contact the{" "}
+                  <a
+                    href='https://github.com/uwenayoallain/'
+                    className='text-skin-base hover:underline'>
+                    {" "}
+                    maintainer at github
+                  </a>
+                  .
+                </SubHeading>
+              </>
+            )}
           </div>
           <div className='w-1/2 h-full'>
             <ImageHolder src={Demo} />
           </div>
         </Section>
+      ) : (
+        <div className='grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5'>
+          {filteredPosts.map((post) => {
+            const { title, slug, excerpt, by, date, readingTime, counts } =
+              post.frontMatter;
+            const postPath = `blog/${slug}`;
+            return (
+              <div key={slug} className='m-1 mb-3'>
+                <Post
+                  title={title}
+                  path={postPath}
+                  excerpt={excerpt}
+                  by={by}
+                  counts={counts}
+                  readingTime={readingTime.text}
+                  words={readingTime.words}
+                  date={date}
+                />
+              </div>
+            );
+          })}
+        </div>
       )}
       {filteredPosts.length &&
         filteredPosts.length < postsBeforeFilter.length &&
