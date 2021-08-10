@@ -9,11 +9,21 @@ import { useRouter } from "next/router";
 import { ThemeProvider } from "@/utils/Themes";
 import { DefaultSeo } from "next-seo";
 import { Seo } from "next-seo.config";
-
+import NProgress from "nprogress";
+import Router from "next/router";
 function MyApp({ Component, pageProps }) {
+  Router.onRouteChangeStart = () => {
+    NProgress.start();
+  };
+  Router.onRouteChangeComplete = () => NProgress.done();
+  Router.onRouteChangeError = () => NProgress.done();
   const [theme, setTheme] = useState("");
   const handleTheme = (theme) => {
     setTheme(theme);
+    const nprogress = document.querySelector("#nprogress");
+    if (nprogress) {
+      nprogress.classList.add(theme != undefined && theme.trim());
+    }
   };
   const path = useRouter().asPath.trim().replace(/#.*/g, "").replace("/", "");
   return (

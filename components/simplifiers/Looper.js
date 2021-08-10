@@ -26,16 +26,15 @@ export default function Looper(props) {
   );
 }
 
-export function TagsLooper({ elements, otherstyles, searchContent, ...props }) {
-  const [searchByTags, setSearchByTags] = useState("");
-  useEffect(() => {
-    searchContent(searchByTags);
-  }, [searchByTags]);
-  const handleSearchByTags = (tag) => {
-    setSearchByTags(searchByTags.concat(" ", tag));
-  };
-  const removeSearch = (search) => {
-    setSearchByTags(searchByTags.replaceAll(search, ""));
+export function TagsLooper({
+  elements,
+  otherstyles,
+  currentSearchValue,
+  appendSearch,
+  ...props
+}) {
+  const handlesearchbyTag = (tag) => {
+    appendSearch(tag);
   };
   return (
     <>
@@ -44,8 +43,8 @@ export function TagsLooper({ elements, otherstyles, searchContent, ...props }) {
           <Button
             key={key}
             element={element}
-            removeSearch={removeSearch}
-            search={handleSearchByTags}
+            currentSearchValue={currentSearchValue}
+            appendSearch={handlesearchbyTag}
           />
         ))}
       </div>
@@ -53,29 +52,39 @@ export function TagsLooper({ elements, otherstyles, searchContent, ...props }) {
   );
 }
 
-export const Button = ({ element, search, removeSearch, ...props }) => {
-  const [toggle, setToogle] = useState(true);
-  const [styles, setStyles] = useState("");
-  const change = (e) => {
-    styles === ""
-      ? setStyles(
-          "!text-white dark:!text-gray-900 dark:bg-gray-200 bg-gray-700"
-        )
-      : setStyles("");
-    setToogle(toggle === false ? true : false);
-    if (toggle) {
-      search(e.target.value);
+export const Button = ({
+  element,
+  search,
+  removeSearch,
+  currentSearchValue,
+  appendSearch,
+  ...props
+}) => {
+  const tag = element.trim().toLowerCase();
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    if (currentSearchValue.trim().toLowerCase().includes(tag)) {
+      setActive(true);
     } else {
-      removeSearch(e.target.value);
+      setActive(false);
     }
+  }, [currentSearchValue, tag]);
+
+  const handleonCkick = (e) => {
+    setActive(!active);
+    appendSearch(tag);
   };
   return (
     <>
       <button
         {...props}
-        className={`${styles} cursor-pointer w-max rounded-full p-3 border-transparent empty:hidden border capitalize ring-0 hover:ring-4 transition m-1 dark:text-white text-gray-900 hover:ring-gray-900 dark:hover:ring-white dark:bg-gray-700 bg-gray-200`}
+        className={
+          active
+            ? "text-white dark:text-gray-900 dark:bg-gray-200 bg-gray-700 cursor-pointer w-max rounded-full p-3 empty:hidden border-2 capitalize ring-0 hover:ring-4 ring-skin-base transition m-1 dark:border-gray-900 border-white"
+            : "cursor-pointer w-max rounded-full p-3 empty:hidden border-2 capitalize ring-0 dark:border-gray-900 border-white hover:ring-4 transition m-1 dark:text-white text-gray-900 hover:ring-gray-900 dark:hover:ring-white dark:bg-gray-700 bg-gray-200"
+        }
         value={element}
-        onClick={(e) => change(e)}>
+        onClick={(e) => handleonCkick(e)}>
         {element}
       </button>
     </>

@@ -43,7 +43,7 @@ export const FormSearchInput = ({ label, type, Items, ...props }) => {
         className='w-10/12 pl-3 placeholder-gray-400 !bg-transparent'
         {...props}
       />
-      <p className='absolute w-max right-4'>{Items}</p>
+      <p className='absolute w-max right-8'>{Items}</p>
     </div>
   );
 };

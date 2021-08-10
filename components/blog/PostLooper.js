@@ -18,30 +18,36 @@ export default function PostLooper({
   const sorts = ["date", "views"];
   const [sort, setSort] = useState(sorts[0]);
   useEffect(() => {
-    if (sort === sorts[0]) {
-      setblogPosts(
-        posts.slice().sort((a, b) => {
-          return new Date(b.frontMatter.date) - new Date(a.frontMatter.date);
-        })
-      );
-    } else if (sort === sorts[1]) {
-      setblogPosts(
-        posts.slice().sort((a, b) => {
-          return Number(b.frontMatter.counts) - Number(a.frontMatter.counts);
-        })
-      );
-    }
-
     if (feacturedposts) {
       setblogPosts(
         blogPosts.filter((post) => post.frontMatter.featured === true)
       );
     } else {
-      setblogPosts(blogPosts.filter((post) => !post.frontMatter.featured));
+      if (sort === sorts[0]) {
+        setblogPosts(
+          blogPosts
+            .filter((post) => !post.frontMatter.featured)
+            .sort((a, b) => {
+              return (
+                new Date(b.frontMatter.date) - new Date(a.frontMatter.date)
+              );
+            })
+        );
+      } else if (sort === sorts[1]) {
+        setblogPosts(
+          blogPosts
+            .filter((post) => !post.frontMatter.featured)
+            .sort((a, b) => {
+              return (
+                Number(b.frontMatter.counts) - Number(a.frontMatter.counts)
+              );
+            })
+        );
+      }
     }
   }, [sort, posts, feacturedposts]);
 
-  const tags = posts.map((post) => post.frontMatter.tags.toString());
+  const tags = blogPosts.map((post) => post.frontMatter.tags.toString());
   const uniqueTags = [...new Set([tags].toString().trim().split(","))];
   const [searchValue, setSearchValue] = useState("");
   const [size, setSize] = useState(defaultSize);
@@ -56,15 +62,24 @@ export default function PostLooper({
         .includes(searchValue.trim().toLowerCase())
   );
   const filteredPosts = postsBeforeFilter.slice(0, size);
-  const handleSearchingByTags = (tags) => {
-    setSearchValue(tags.trim());
+
+  const handlesearchbyTag = (tag) => {
+    if (searchValue.trim().toLowerCase().includes(tag)) {
+      setSearchValue(searchValue.replace(tag, "").trim());
+    } else {
+      setSearchValue(searchValue.concat(" ", tag.trim().toLowerCase()));
+    }
   };
   return (
     <div>
+      {" "}
       {!feacturedposts ? (
         <>
           <div className='w-1/2'>
-            <SubHeading>Search the blog using keywords or category</SubHeading>
+            <SubHeading>
+              {" "}
+              Search the blog using keywords or category{" "}
+            </SubHeading>{" "}
             <FormSearchInput
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
@@ -72,31 +87,34 @@ export default function PostLooper({
               Items={filteredPosts.length}
               label='Search the blog'
             />
-          </div>
+          </div>{" "}
           <div className='w-full m-5'>
             <TagsLooper
               elements={uniqueTags}
-              searchContent={handleSearchingByTags}
-            />
-          </div>
+              currentSearchValue={searchValue}
+              appendSearch={handlesearchbyTag}
+            />{" "}
+          </div>{" "}
         </>
       ) : (
         <>
           <div className='w-1/2'>
-            <Heading>Featured Posts</Heading>
-          </div>
+            <Heading> Featured Posts </Heading>{" "}
+          </div>{" "}
         </>
-      )}
+      )}{" "}
       <div>
+        {" "}
         {!feacturedposts && filteredPosts.length > 2 && (
           <button
             className='block px-5 py-2 m-auto my-2 text-white transition bg-gray-900 border border-white rounded-full w-max dark:border-gray-900 dark:bg-white dark:text-gray-900 ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white'
             onClick={() =>
               setSort(!sort || sort === sorts[0] ? sorts[1] : sorts[0])
             }>
+            {" "}
             {sort === sorts[0]
               ? "sorting by newest"
-              : "sorting by most popular"}
+              : "sorting by most popular"}{" "}
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='inline-block w-6 h-6 transition rotate-0'
@@ -109,50 +127,51 @@ export default function PostLooper({
                 strokeWidth='2'
                 d='M8 9l4-4 4 4m0 6l-4 4-4-4'
               />
-            </svg>
+            </svg>{" "}
           </button>
-        )}
-      </div>
+        )}{" "}
+      </div>{" "}
       {!filteredPosts.length ? (
         <Section>
           <div className='w-1/2 h-3/4'>
-            <Heading>Nothing Found in the blog</Heading>
+            <Heading> Nothing Found in the blog </Heading>{" "}
             {searchValue != "" ? (
               <SubHeading>
                 It looks like{" "}
-                <span className='text-skin-base'>`{searchValue.trim()}`</span> ,
-                the search keyword you use did not match any post. but you can
+                <span className='text-skin-base'> `{searchValue.trim()}` </span>{" "}
+                , the search keyword you use did not match any post.but you can
                 try using a{" "}
                 <a
                   href='#search the blog'
                   className='text-skin-base hover:underline '>
-                  different keyword or the categories above
+                  different keyword or the categories above{" "}
                 </a>
-                .
+                .{" "}
               </SubHeading>
             ) : (
               <>
                 <SubHeading>
-                  It looks like there is no content on the blog and it's not
+                  It looks like there is no content on the blog and it 's not
                   based on a search, if this is not a development site you need
                   to contact the{" "}
                   <a
                     href='https://github.com/uwenayoallain/'
                     className='text-skin-base hover:underline'>
                     {" "}
-                    maintainer at github
+                    maintainer at github{" "}
                   </a>
-                  .
-                </SubHeading>
+                  .{" "}
+                </SubHeading>{" "}
               </>
-            )}
-          </div>
+            )}{" "}
+          </div>{" "}
           <div className='w-1/2 h-full'>
-            <ImageHolder src={Demo} />
-          </div>
+            <ImageHolder src={Demo} />{" "}
+          </div>{" "}
         </Section>
       ) : (
         <div className='grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5'>
+          {" "}
           {filteredPosts.map((post) => {
             const { title, slug, excerpt, by, date, readingTime, counts } =
               post.frontMatter;
@@ -168,12 +187,12 @@ export default function PostLooper({
                   readingTime={readingTime.text}
                   words={readingTime.words}
                   date={date}
-                />
+                />{" "}
               </div>
             );
-          })}
+          })}{" "}
         </div>
-      )}
+      )}{" "}
       {filteredPosts.length &&
         filteredPosts.length < postsBeforeFilter.length &&
         !nomore && (
@@ -186,9 +205,9 @@ export default function PostLooper({
                 setSize(2 * defaultSize);
               }
             }}>
-            Load more posts
+            Load more posts{" "}
           </button>
-        )}
+        )}{" "}
     </div>
   );
 }

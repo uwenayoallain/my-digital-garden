@@ -134,7 +134,7 @@ export default function AllPages() {
             <Badge>🇷🇼</Badge>. I've worked on some open source projects , take a
             look on them.
             <InnerLink
-              href='/opensource'
+              href='/open-source'
               content='More about my open source projects'
             />
           </SubHeading>

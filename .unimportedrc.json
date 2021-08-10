@@ -12,10 +12,13 @@
     "pages/404.js",
     "pages/_app.js",
     "pages/about.js",
+    "pages/actions.js",
+    "pages/allpages.js",
     "pages/blog/[slug].js",
     "pages/blog/index.js",
     "pages/featured-posts.js",
     "pages/index.js",
+    "pages/opensource.js",
     "pages/uses.js",
     "postcss.config.js",
     "tailwind.config.js"

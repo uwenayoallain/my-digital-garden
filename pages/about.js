@@ -79,32 +79,32 @@ const About = () => {
           </div>
           <div className='w-1/2 h-3/4'>
             <Heading>Tools i mostly use</Heading>
+            <Looper
+              elements={[
+                ["javascript", "/"],
+                ["nodejs", "https://nodejs.org/en/"],
+                ["fastify", "https://www.fastify.io/"],
+                ["expressjs", "https://expressjs.com/"],
+                ["vuejs", "https://v3.vuejs.org/"],
+                ["quasar", "https://quasar.dev/"],
+                ["svelte", "https://svelte.dev/"],
+                ["reactjs", "https://reactjs.org/"],
+                ["nextjs", "https://nextjs.org/"],
+                ["php", "/"],
+                ["laravel", "https://laravel.com/"],
+                ["mongodb", "https://www.mongodb.com/"],
+                ["tailwindcss", "https://tailwindcss.com/"],
+                ["postgresql", "/"],
+                ["vs-code", "#"],
+                ["postman Canary", "#"],
+                ["daily.dev", "#"],
+                ["github", "#"],
+                ["vercel", "#"],
+                ["netlify", "#"],
+                ["gitlab", "#"],
+              ]}
+            />
             <SubHeading>
-              <Looper
-                elements={[
-                  ["javascript", "/"],
-                  ["nodejs", "https://nodejs.org/en/"],
-                  ["fastify", "https://www.fastify.io/"],
-                  ["expressjs", "https://expressjs.com/"],
-                  ["vuejs", "https://v3.vuejs.org/"],
-                  ["quasar", "https://quasar.dev/"],
-                  ["svelte", "https://svelte.dev/"],
-                  ["reactjs", "https://reactjs.org/"],
-                  ["nextjs", "https://nextjs.org/"],
-                  ["php", "/"],
-                  ["laravel", "https://laravel.com/"],
-                  ["mongodb", "https://www.mongodb.com/"],
-                  ["tailwindcss", "https://tailwindcss.com/"],
-                  ["postgresql", "/"],
-                  ["vs-code", "#"],
-                  ["postman Canary", "#"],
-                  ["daily.dev", "#"],
-                  ["github", "#"],
-                  ["vercel", "#"],
-                  ["netlify", "#"],
-                  ["gitlab", "#"],
-                ]}
-              />
               <InnerLink href='/uses' content='More about tools i use' />
             </SubHeading>
           </div>

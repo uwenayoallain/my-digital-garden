@@ -17,6 +17,11 @@ div.main {
   outline: 0px !important;
 }
 
+*[aria-label]:hover::after {
+  content: attr(aria-label);
+  @apply absolute top-[100%] left-0 bg-gray-900 text-white w-max p-1 rounded;
+}
+
 input:hover,
 input:focus {
   @apply border-black outline-none dark:border-white;
@@ -164,4 +169,28 @@ a {
     --background-color-base: 255, 241, 242;
     --border-color-base: 225, 29, 72;
   }
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  @apply fixed top-0 left-0 z-50 w-full bg-skin-inverted h-[2px];
+}
+
+#nprogress .peg {
+  @apply block absolute right-0 w-[100] h-full opacity-100;
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
 }
