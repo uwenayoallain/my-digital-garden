@@ -19,7 +19,7 @@ export default function AllPages() {
           <Heading>All pages</Heading>
           <SubHeading>
             This page contains all pages that are in the site, including those
-            which didn't be mentioned in any page.
+            which didn&apos;t be mentioned in any page.
             <ButtonLinks />
             <ArrowLink direction='bottom' to='#overview' />
           </SubHeading>
@@ -57,7 +57,7 @@ export default function AllPages() {
         <div className='w-1/2 h-3/4'>
           <Heading>Just still learning</Heading>
           <SubHeading>
-            I'm a learner at{" "}
+            I&apos;m a learner at{" "}
             <a
               href='http://rca.ac.rw/'
               className='text-skin-base hover:underline'>
@@ -100,7 +100,7 @@ export default function AllPages() {
         <div className='w-1/2 h-3/4'>
           <Heading>Action Tracker</Heading>
           <SubHeading>
-            I'm just going to develop an action tracker for my open source
+            I&apos;m just going to develop an action tracker for my open source
             projects just as a reminder and personal monitoring. check more
             about how the action tracker works here.
             <InnerLink
@@ -131,8 +131,8 @@ export default function AllPages() {
           <Heading>Open Source</Heading>
           <SubHeading>
             I am a developer, a blogger and an open source lover based in Rwanda
-            <Badge>🇷🇼</Badge>. I've worked on some open source projects , take a
-            look on them.
+            <Badge>🇷🇼</Badge>. I&apos;ve worked on some open source projects ,
+            take a look on them.
             <InnerLink
               href='/open-source'
               content='More about my open source projects'

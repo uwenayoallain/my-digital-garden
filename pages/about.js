@@ -16,11 +16,12 @@ const About = () => {
       <div>
         <Section title='heading'>
           <div className='w-1/2 h-3/4'>
-            <Heading>I'm uwenayoallain</Heading>
+            <Heading>I&apos;m uwenayoallain</Heading>
             <SubHeading>
               I am a developer, a blogger and an open source lover based in
               Rwanda<Badge>🇷🇼</Badge>. This is my digital garden, where I write
-              about the things I'm working on and share what I've learned.
+              about the things I&apos;m working on and share what I&apos;ve
+              learned.
               <ButtonLinks />
               <ArrowLink direction='bottom' to='#about' />
             </SubHeading>
@@ -36,7 +37,7 @@ const About = () => {
           <div className='w-1/2 h-3/4'>
             <Heading>Just still learning</Heading>
             <SubHeading>
-              I'm a learner at{" "}
+              I&apos;m a learner at{" "}
               <a
                 href='http://rca.ac.rw/'
                 className='text-skin-base hover:underline'>
@@ -60,9 +61,9 @@ const About = () => {
           <div className='w-1/2 h-3/4'>
             <Heading>Action Tracker</Heading>
             <SubHeading>
-              I'm just going to develop an action tracker for my open source
-              projects just as a reminder and personal monitoring. check more
-              about how the action tracker works here.
+              I&apos;m just going to develop an action tracker for my open
+              source projects just as a reminder and personal monitoring. check
+              more about how the action tracker works here.
               <InnerLink
                 href='/opensource/action-tracker'
                 content='More about how i track my actions'

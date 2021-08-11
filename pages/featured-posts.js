@@ -36,7 +36,7 @@ export default function FeaturedPosts({ posts }) {
         <div className='w-1/2 h-3/4'>
           <Heading>Action Tracker</Heading>
           <SubHeading>
-            I'm just going to develop an action tracker for my open source
+            I&apos;m just going to develop an action tracker for my open source
             projects just as a reminder and personal monitoring. check more
             about how the action tracker works here.
             <InnerLink

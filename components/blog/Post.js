@@ -24,9 +24,7 @@ export default function Post({
       <CopyToClipboard
         text={"https://github.com/uwenayoallain/" + path}
         onCopy={() => setCopied(true)}>
-        <button
-          className='absolute z-40 hidden p-2 text-gray-900 bg-white rounded w-max h-max right-2 top-2 group-hover:block'
-          aria-label='copy url to clipboard'>
+        <button className='absolute z-40 hidden p-2 text-gray-900 bg-white rounded w-max h-max right-2 top-2 group-hover:block'>
           {copied ? (
             <span className='text-skin-base'>
               <svg

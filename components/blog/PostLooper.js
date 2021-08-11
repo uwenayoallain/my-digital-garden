@@ -15,6 +15,7 @@ export default function PostLooper({
   feacturedposts = false,
 }) {
   const [blogPosts, setblogPosts] = useState(posts);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const sorts = ["date", "views"];
   const [sort, setSort] = useState(sorts[0]);
   useEffect(() => {
@@ -45,7 +46,7 @@ export default function PostLooper({
         );
       }
     }
-  }, [sort, posts, feacturedposts]);
+  }, [sort, posts, feacturedposts, blogPosts, sorts]);
 
   const tags = blogPosts.map((post) => post.frontMatter.tags.toString());
   const uniqueTags = [...new Set([tags].toString().trim().split(","))];
@@ -151,8 +152,8 @@ export default function PostLooper({
             ) : (
               <>
                 <SubHeading>
-                  It looks like there is no content on the blog and it 's not
-                  based on a search, if this is not a development site you need
+                  It looks like there is no content on the blog and it is not
+                  caused by a search, if this is not a development site you need
                   to contact the{" "}
                   <a
                     href='https://github.com/uwenayoallain/'

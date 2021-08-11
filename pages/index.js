@@ -18,74 +18,73 @@ const Index = () => {
   return (
     <PageLayout>
       <div>
-        <Section title="heading">
-          <div className="w-1/2 h-3/4">
-            <Heading>I'm uwenayoallain</Heading>
+        <Section title='heading'>
+          <div className='w-1/2 h-3/4'>
+            <Heading>I&apos;m uwenayoallain</Heading>
             <SubHeading>
               I am a developer, a blogger and an open source lover based in
               Rwanda<Badge>🇷🇼</Badge>. This is my digital garden, where I write
-              about the things I'm working on and share what I've learned.
-              <ButtonLinks firsthref="/about" firstbutton="About me" />
+              about the things I&apos;m working on and share what I&apos;ve
+              learned.
+              <ButtonLinks firsthref='/about' firstbutton='About me' />
             </SubHeading>
           </div>
-          <div className="w-1/2 h-full">
-            <div className="m-auto rounded-full shadow w-36 h-36">
+          <div className='w-1/2 h-full'>
+            <div className='m-auto rounded-full shadow w-36 h-36'>
               <Image
-                className="rounded-full"
+                className='rounded-full'
                 src={Myimage}
-                width="300"
-                height="300"
-                draggable="false"
+                width='300'
+                height='300'
+                alt='My Image'
+                draggable='false'
               />
             </div>
             <SocialCard />
           </div>
-          <ArrowLink direction="bottom" to="#about" />
+          <ArrowLink direction='bottom' to='#about' />
           <hr />
         </Section>
-        <Section title="about" bg="dark:bg-gray-800 bg-gray-50">
-          <div className="w-1/2 h-full">
+        <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
+          <div className='w-1/2 h-full'>
             <ImageHolder src={Demo} />
           </div>
-          <div className="w-1/2 h-3/4">
+          <div className='w-1/2 h-3/4'>
             <Heading>Uwenayoallain(Yarison allain)</Heading>
             <SubHeading>
-              Hi there, I'm a junior developer and a learner at{" "}
+              Hi there, I&apos;m a junior developer and a learner at{" "}
               <a
-                href="http://rca.ac.rw/"
-                className="text-skin-base hover:underline"
-              >
+                href='http://rca.ac.rw/'
+                className='text-skin-base hover:underline'>
                 Rwanda coding academy
               </a>
               , i am currently learning web techs and working on some{" "}
               <a
-                href="https://github.com/uwenayoallain"
-                className="text-skin-base hover:underline"
-              >
+                href='https://github.com/uwenayoallain'
+                className='text-skin-base hover:underline'>
                 open source projects.
               </a>
-              <InnerLink href="/about" content="More about me" />
+              <InnerLink href='/about' content='More about me' />
             </SubHeading>
           </div>
         </Section>
-        <Section title="blog">
-          <div className="w-1/2 h-3/4">
+        <Section title='blog'>
+          <div className='w-1/2 h-3/4'>
             <Heading>My personal blog:</Heading>
             <SubHeading>
-              i like sharing some stuffs that i've gained with others , i use
-              some blogging sites to gain more traffic to make sure that i'm
-              being more helpful. <i>[at least before] </i>{" "}
+              i like sharing some stuffs that i&apos;ve gained with others , i
+              use some blogging sites to gain more traffic to make sure that
+              i&apos;m being more helpful. <i>[at least before] </i>{" "}
               <a
-                href="http://dev.to"
-                className="text-skin-base hover:underline"
-              >
+                href='http://dev.to'
+                className='text-skin-base hover:underline'>
                 Dev.to
               </a>{" "}
               is my favorite, check out my blog!
-              <InnerLink href="/blog" content="More about my blog" />
+              <InnerLink href='/blog' content='More about my blog' />
             </SubHeading>
           </div>
-          <div className="w-1/2 h-full">
+          <div className='w-1/2 h-full'>
             <ImageHolder src={Demo} />
           </div>
         </Section>

@@ -26,8 +26,8 @@ export default function Custom404({ posts }) {
               {" "}
               {path.asPath.trim().replace(/#.*/g, "")}{" "}
             </span>{" "}
-            , the page you are looking for is not found on this domain. but
-            don't worry we've got more.
+            , the page you are looking for is not found on this domain. but dont
+            worry we&apos;ve got more.
             <ButtonLinks />
             <ArrowLink direction='bottom' to='#more' />
           </SubHeading>
@@ -44,7 +44,7 @@ export default function Custom404({ posts }) {
         <div className='w-1/2 h-3/4'>
           <Heading>Uwenayoallain(Yarison allain)</Heading>
           <SubHeading>
-            Hi there, I'm a junior[maybe senior] developer and a learner at{" "}
+            Hi there, I&apos;m a junior[maybe senior] developer and a learner at{" "}
             <a
               href='http://rca.ac.rw/'
               className='text-skin-base hover:underline'>

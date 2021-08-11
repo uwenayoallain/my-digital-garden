@@ -8,7 +8,6 @@ import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "@/utils/Themes";
 import { DefaultSeo } from "next-seo";
-import { Seo } from "next-seo.config";
 import NProgress from "nprogress";
 import Router from "next/router";
 function MyApp({ Component, pageProps }) {
@@ -28,7 +27,10 @@ function MyApp({ Component, pageProps }) {
   const path = useRouter().asPath.trim().replace(/#.*/g, "").replace("/", "");
   return (
     <>
-      <DefaultSeo {...Seo} />
+      <DefaultSeo
+        title='uwenayoallain'
+        description="I am a developer, a blogger and an open source lover based in Rwanda. This is my digital garden, where I write about the things I'm working on and share whatI've learned."
+      />
       <ThemeProvider>
         <Head>
           <link rel='manifest' href='./site.webmanifest' />
@@ -47,7 +49,7 @@ function MyApp({ Component, pageProps }) {
         <div
           className={`main relative w-full dark:bg-gray-900 dark:text-white ${theme}`}
           id='main'>
-          <div className='relative' aria-label='make header collapse on footer'>
+          <div className='relative'>
             <Header currentTheme={handleTheme} />
             <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} />
