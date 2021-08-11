@@ -64,7 +64,7 @@ export const Toggle = () => {
     <>
       <button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className='p-6 text-gray-700 border rounded-full'>
+        className='p-3 text-gray-700 border rounded-full'>
         <svg fill='none' viewBox='0 0 24 24' stroke='currentColor'>
           <motion.path
             strokeLinecap='round'

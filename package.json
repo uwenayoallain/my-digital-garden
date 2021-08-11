@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/typography": "^0.4.1",
     "countapi-js": "^1.0.2",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.2",
