@@ -40,9 +40,9 @@ export default function Blog({ posts }) {
         <div className='w-1/2 h-3/4'>
           <Heading>Every one has a life story to share,me too.</Heading>
           <SubHeading>
-            You&apos;re interested in my life story , as a dev?,check out my
-            programming life story.and learn <strong>problems</strong> a faced
-            and who i overcame them.
+            are you&apos;re interested in my story?,check out my story about
+            programming including common drawbacks of being a programmer and how
+            to overcome them.
             <InnerLink href='/life' content='Read more here' />
           </SubHeading>
         </div>

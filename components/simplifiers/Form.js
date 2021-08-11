@@ -18,7 +18,7 @@ export const FormInput = ({ label, type, ...props }) => {
     </div>
   );
 };
-export const FormSearchInput = ({ label, type, Items, ...props }) => {
+export const FormSearchInput = ({ label, type, Items, value, ...props }) => {
   const id = label.trim().toLowerCase();
   return (
     <div className='relative flex w-5/6 p-6 mt-4 text-xl border border-gray-400 rounded-full'>

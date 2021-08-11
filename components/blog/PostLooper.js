@@ -15,7 +15,6 @@ export default function PostLooper({
   feacturedposts = false,
 }) {
   const [blogPosts, setblogPosts] = useState(posts);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const sorts = ["date", "views"];
   const [sort, setSort] = useState(sorts[0]);
   useEffect(() => {
@@ -24,7 +23,7 @@ export default function PostLooper({
         blogPosts.filter((post) => post.frontMatter.featured === true)
       );
     } else {
-      if (sort === sorts[0]) {
+      if (sort === "date") {
         setblogPosts(
           blogPosts
             .filter((post) => !post.frontMatter.featured)
@@ -34,7 +33,7 @@ export default function PostLooper({
               );
             })
         );
-      } else if (sort === sorts[1]) {
+      } else if (sort === "views") {
         setblogPosts(
           blogPosts
             .filter((post) => !post.frontMatter.featured)
@@ -46,7 +45,9 @@ export default function PostLooper({
         );
       }
     }
-  }, [sort, posts, feacturedposts, blogPosts, sorts]);
+    return () => {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [feacturedposts, sort]);
 
   const tags = blogPosts.map((post) => post.frontMatter.tags.toString());
   const uniqueTags = [...new Set([tags].toString().trim().split(","))];
@@ -176,12 +177,11 @@ export default function PostLooper({
           {filteredPosts.map((post) => {
             const { title, slug, excerpt, by, date, readingTime, counts } =
               post.frontMatter;
-            const postPath = `blog/${slug}`;
             return (
               <div key={slug} className='m-1 mb-3'>
                 <Post
                   title={title}
-                  path={postPath}
+                  path={`blog/${slug}`}
                   excerpt={excerpt}
                   by={by}
                   counts={counts}
