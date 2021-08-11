@@ -16,7 +16,6 @@ export default function Post({
   const views = usePageViews(path);
   const [copied, setCopied] = useState(false);
   const basePath = useRouter().basePath;
-  console.log(useRouter());
   return (
     <div className='relative z-0 block transition bg-gray-100 border-4 border-white dark:border-gray-900 ring-0 hover:ring-4 ring-skin-base dark:bg-gray-800 rounded-xl group'>
       <CopyToClipboard
@@ -89,13 +88,13 @@ export default function Post({
               ""
             )}
           </div>
-          <InnerLink
-            href={"/" + path}
-            content='Read More'
-            className='absolute bottom-0 px-4 py-3'
-          />
         </div>
       </a>
+      <InnerLink
+        href={"/" + path}
+        content='Read More'
+        className='absolute bottom-0 px-4 py-3 -translate-x-3/4 right-1/2 left-1/2'
+      />
     </div>
   );
 }
