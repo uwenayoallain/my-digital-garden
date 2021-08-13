@@ -30,22 +30,12 @@ const Index = () => {
             </SubHeading>
           </Handler>
           <Handler height=''>
-            <div className='m-auto rounded-full shadow w-36 h-36'>
-              <Image
-                className='rounded-full'
-                src={Myimage}
-                width='300'
-                height='300'
-                alt='My Image'
-                draggable='false'
-              />
-            </div>
+            <ImageHolder src={Demo} />
             <SocialCard />
           </Handler>
           <ArrowLink direction='bottom' to='#about' />
-          <hr />
         </Section>
-        <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
+        <Section title='about' bg='dark:bg-gray-800 bg-gray-50' reverse>
           <Handler height=''>
             <ImageHolder src={Demo} />
           </Handler>

@@ -43,7 +43,7 @@ export default function Custom404({ posts }) {
           <PostLooper posts={posts} nomore feacturedposts />
         </div>
       </Section>
-      <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
+      <Section title='about' bg='dark:bg-gray-800 bg-gray-50' reverse>
         <Handler height=''>
           <ImageHolder src={Demo} />
         </Handler>

@@ -31,7 +31,7 @@ export default function InnerLink({
         </a>
       ) : (
         <a
-          className={` ${className} group mt-16 m-6 block w-max rounded-full p-6 pr-12 border-4 font-medium dark:text-black text-gray-100 dark:bg-white hover:ring-4 ring-0 transition hover:text-skin-base dark:hover:text-skin-base ring-skin-base bg-gray-900 border-transparent bg-clip-padding`}
+          className={` ${className} group md:mt-16 m-6 block w-11/12 md:w-max rounded-full p-6 text-center md:pr-12 border-4 font-medium dark:text-black text-gray-100 dark:bg-white hover:ring-4 ring-0 transition hover:text-skin-base dark:hover:text-skin-base ring-skin-base bg-gray-900 border-transparent bg-clip-padding`}
           {...otherProps}>
           {content}
           {
@@ -65,14 +65,14 @@ export const ButtonLinks = ({
     <div>
       <Link href={firsthref}>
         <a
-          className='inline-block px-12 py-4 m-4 mt-12 font-medium text-gray-100 transition bg-gray-900 border-4 border-transparent rounded-full group w-max dark:text-black ring-0 dark:bg-white hover:ring-4 hover:ring-gray-900 dark:hover:ring-white bg-clip-padding'
+          className='inline-block w-9/12 py-4 mx-6 my-3 font-medium text-center text-gray-100 transition bg-gray-900 border-4 border-transparent rounded-full md:px-12 md:m-4 md:mt-12 group md:w-max dark:text-black ring-0 dark:bg-white hover:ring-4 hover:ring-gray-900 dark:hover:ring-white bg-clip-padding'
           {...otherProps}>
           {firstbutton}
         </a>
       </Link>
       <Link href={lasthref}>
         <a
-          className='inline-block px-12 py-4 m-4 mt-12 font-medium text-gray-900 transition bg-white border-4 border-gray-900 rounded-full hover:border-transparent group w-max dark:border-gray-700 dark:hover:border-gray-900 dark:text-white ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white dark:bg-gray-900'
+          className='inline-block w-9/12 py-4 mx-6 my-3 font-medium text-center text-gray-900 transition bg-white border-4 border-gray-900 rounded-full md:px-12 md:m-4 md:mt-12 hover:border-transparent group md:w-max dark:border-gray-700 dark:hover:border-gray-900 dark:text-white ring-0 hover:ring-4 hover:ring-gray-900 dark:hover:ring-white dark:bg-gray-900'
           {...otherProps}>
           {lastbutton}
         </a>

@@ -28,7 +28,7 @@ export default function AllPages() {
           <ImageHolder src={Demo} />
         </Handler>
       </Section>
-      <Section title='overview' bg='dark:bg-gray-800 bg-gray-50'>
+      <Section title='overview' bg='dark:bg-gray-800 bg-gray-50' reverse>
         <Handler height=''>
           <ImageHolder src={Demo} />
         </Handler>
@@ -70,17 +70,14 @@ export default function AllPages() {
               className='text-skin-base hover:underline'>
               open source projects.
             </a>
-            <InnerLink
-              href='/opensource'
-              content='More about my open source projects'
-            />
+            <InnerLink href='/about' content='about me' />
           </SubHeading>
         </Handler>
         <Handler height=''>
           <ImageHolder src={Demo} />
         </Handler>
       </Section>
-      <Section title='featured-posts' bg='dark:bg-gray-800 bg-gray-50'>
+      <Section title='featured-posts' bg='dark:bg-gray-800 bg-gray-50' reverse>
         <Handler height=''>
           <ImageHolder src={Demo} />
         </Handler>
@@ -89,10 +86,7 @@ export default function AllPages() {
           <SubHeading>
             Featured posts are blog posts with higher visibility and they are
             more important than regular posts.
-            <InnerLink
-              href='/featured-posts'
-              content='More about featured posts'
-            />
+            <InnerLink href='/featured-posts' content='featured posts' />
           </SubHeading>
         </Handler>
       </Section>
@@ -103,17 +97,14 @@ export default function AllPages() {
             I&apos;m just going to develop an action tracker for my open source
             projects just as a reminder and personal monitoring. check more
             about how the action tracker works here.
-            <InnerLink
-              href='/action-tracker'
-              content='More about how i track my actions'
-            />
+            <InnerLink href='/action-tracker' content='action tracker' />
           </SubHeading>
         </Handler>
         <Handler height=''>
           <ImageHolder src={Demo} />
         </Handler>
       </Section>
-      <Section title='uses' bg='dark:bg-gray-800 bg-gray-50'>
+      <Section title='uses' bg='dark:bg-gray-800 bg-gray-50' reverse>
         <Handler height=''>
           <ImageHolder src={Demo} />
         </Handler>
@@ -133,10 +124,7 @@ export default function AllPages() {
             I am a developer, a blogger and an open source lover based in Rwanda
             <Badge>🇷🇼</Badge>. I&apos;ve worked on some open source projects ,
             take a look on them.
-            <InnerLink
-              href='/open-source'
-              content='More about my open source projects'
-            />
+            <InnerLink href='/open-source' content='open source' />
           </SubHeading>
         </Handler>
         <Handler height=''>

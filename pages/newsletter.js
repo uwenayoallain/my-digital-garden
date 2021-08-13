@@ -28,7 +28,7 @@ export default function Actions() {
           <ImageHolder src={Demo} />
         </Handler>
       </Section>
-      <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
+      <Section title='about' bg='dark:bg-gray-800 bg-gray-50' reverse>
         <Handler height=''>
           <ImageHolder src={Demo} />
         </Handler>

@@ -1,8 +1,7 @@
 import { usePageViews } from "@/hooks/useCountpageviews";
 import InnerLink from "../common/innerLink";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Post({
   title,
@@ -13,13 +12,12 @@ export default function Post({
   readingTime,
   words,
 }) {
-  const views = usePageViews(path);
   const [copied, setCopied] = useState(false);
-  const basePath = useRouter().basePath;
+  const views = usePageViews(path);
   return (
     <div className='relative z-0 block transition bg-gray-100 border-4 border-white dark:border-gray-900 ring-0 hover:ring-4 ring-skin-base dark:bg-gray-800 rounded-xl group'>
       <CopyToClipboard
-        text={basePath + path}
+        text={path}
         onCopy={() => {
           setCopied(true);
           setTimeout(() => {
@@ -93,7 +91,7 @@ export default function Post({
       <InnerLink
         href={"/" + path}
         content='Read More'
-        className='absolute bottom-0 px-4 py-3 -translate-x-3/4 right-1/2 left-1/2'
+        className='absolute bottom-0 !w-10/12 md:!w-max md:left-8'
       />
     </div>
   );

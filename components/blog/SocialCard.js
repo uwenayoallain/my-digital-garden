@@ -174,7 +174,7 @@ export default function SocialCard({ props }) {
   return (
     <>
       <motion.div
-        className='relative z-10 grid w-full grid-cols-5 mx-auto my-5 rounded md:w-11/12 lg:w-10/12'
+        className='relative z-10 hidden w-full grid-cols-5 mx-auto my-5 rounded md:grid md:w-11/12 lg:w-10/12'
         {...props}
         initial='hidden'
         animate='visible'

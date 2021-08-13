@@ -1,20 +1,22 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import countAPI from "countapi-js";
 
 export function usePageViews(path) {
-  const [views, setViews] = React.useState(1);
-  const namespace = "uwenayoallain.com";
-  const key = path.replace("\\", "").replace("/", "");
-  React.useEffect(() => {
+  const [views, setViews] = useState(1);
+  useEffect(() => {
+    const key = path.replace("\\", "").replace("/", "");
+    const namespace = "uwenayoallain.com";
     let ignore = false;
-    if (!ignore) {
-      countAPI.get(namespace, key).then((result) => setViews(result.value));
-    }
+    countAPI.get(namespace, key).then((result) => {
+      if (ignore) return;
+      setViews(result.value);
+    });
     return () => {
       ignore = true;
     };
-  }, [namespace, key]);
-  return views;
+  }, [path]);
+
+  return Number(views);
 }
 export async function getPageViews(path) {
   const namespace = "uwenayoallain.com";
@@ -24,10 +26,10 @@ export async function getPageViews(path) {
 }
 
 export function useCountPageView(path) {
-  const [views, setViews] = React.useState(1);
+  const [views, setViews] = useState(1);
   const namespace = "uwenayoallain.com";
   const key = path.replace("/", "").replace("/", "");
-  React.useEffect(() => {
+  useEffect(() => {
     countAPI.hit(namespace, key).then((result) => setViews(result.value));
   }, [namespace, key]);
   return views;

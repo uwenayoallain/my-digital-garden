@@ -41,7 +41,7 @@ export default function FeaturedPosts({ posts }) {
             about how the action tracker works here.
             <InnerLink
               href='/opensource/action-tracker'
-              content='More about how i track my actions'
+              content='action tracker'
             />
           </SubHeading>
         </Handler>

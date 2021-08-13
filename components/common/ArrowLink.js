@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function ArrowLink({ direction = "right", to = "#" }) {
   return (
     <Link href={to}>
-      <a className='absolute block p-3 transition border-2 border-black rounded-full group bottom-40 right-3 dark:border-white'>
+      <a className='absolute hidden p-3 transition border-2 border-black rounded-full md:block group bottom-40 right-3 dark:border-white'>
         {direction === "bottom" && (
           <svg
             xmlns='http://www.w3.org/2000/svg'

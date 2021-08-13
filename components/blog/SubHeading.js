@@ -1,7 +1,7 @@
 export default function SubHeading({ children, ...props }) {
   return (
     <div
-      className='mt-5 text-2xl leading-9 text-gray-800 dark:text-gray-300 '
+      className='mx-3 mt-5 text-xl leading-normal text-gray-800 md:leading-9 md:text-2xl dark:text-gray-300 '
       {...props}>
       {children}
     </div>

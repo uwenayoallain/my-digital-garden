@@ -30,7 +30,7 @@ const About = () => {
             <ImageHolder src={Demo} />
           </Handler>
         </Section>
-        <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
+        <Section title='about' bg='dark:bg-gray-800 bg-gray-50' reverse>
           <Handler height=''>
             <ImageHolder src={Demo} />
           </Handler>
@@ -50,10 +50,7 @@ const About = () => {
                 className='text-skin-base hover:underline'>
                 open source projects.
               </a>
-              <InnerLink
-                href='/opensource'
-                content='More about my open source projects'
-              />
+              <InnerLink href='/opensource' content='open source' />
             </SubHeading>
           </Handler>
         </Section>
@@ -66,7 +63,7 @@ const About = () => {
               more about how the action tracker works here.
               <InnerLink
                 href='/opensource/action-tracker'
-                content='More about how i track my actions'
+                content='action tracker'
               />
             </SubHeading>
           </Handler>
@@ -74,7 +71,10 @@ const About = () => {
             <ImageHolder src={Demo} />
           </Handler>
         </Section>
-        <Section title='programming' bg='dark:bg-gray-800 bg-gray-50 h-auto'>
+        <Section
+          title='programming'
+          bg='dark:bg-gray-800 bg-gray-50 h-auto'
+          reverse>
           <Handler height=''>
             <ImageHolder src={Demo} />
           </Handler>

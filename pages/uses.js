@@ -32,7 +32,10 @@ const About = () => {
             <ImageHolder src={Demo} />
           </Handler>
         </Section>
-        <Section title='programming' bg='dark:bg-gray-800 bg-gray-50 h-auto'>
+        <Section
+          title='programming'
+          bg='dark:bg-gray-800 bg-gray-50 h-auto'
+          reverse>
           <Handler height=''>
             <ImageHolder src={Demo} />
           </Handler>

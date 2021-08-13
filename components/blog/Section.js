@@ -3,11 +3,14 @@ export default function Section({
   title = "#",
   bg = "transparent",
   className = "",
+  reverse = false,
   ...props
 }) {
   return (
     <div
-      className={`flex flex-wrap h-screen m-2 md:m-10 p-2 md:p-10 w-full md:w-11/12 !rounded-3xl items-center relative ${bg} ${className}`}
+      className={`${
+        !reverse ? "flex-wrap-reverse md:flex-wrap" : "flex-wrap"
+      } flex h-full md:h-screen md:m-10 p-2 md:p-10 w-full md:w-11/12  md:rounded-3xl items-center relative ${bg} ${className}`}
       id={title}
       {...props}>
       {children}

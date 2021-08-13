@@ -95,9 +95,9 @@ export default function PostLooper({
         </>
       ) : (
         <>
-          <div className='w-1/2'>
+          <Handler>
             <Heading> Featured Posts </Heading>{" "}
-          </div>{" "}
+          </Handler>
         </>
       )}{" "}
       <div>
@@ -167,7 +167,7 @@ export default function PostLooper({
           </Handler>
         </Section>
       ) : (
-        <div className='grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5'>
+        <div className='grid md:grid-cols-3 w-full h-full py-4 px-0.5 mb-5'>
           {" "}
           {filteredPosts.map((post) => {
             const { title, slug, excerpt, by, date, readingTime, counts } =

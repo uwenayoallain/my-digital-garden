@@ -9,7 +9,7 @@ export default function Footer() {
       className='relative h-screen font-medium leading-10 capitalize'
       id='footer'>
       <div className='grid md:grid-cols-4 pt-[10%] p-6 w-11/12 mx-auto'>
-        <div className='text-lg leading-10'>
+        <div className='text-lg leading-10 h-max'>
           <Link href={"/"}>
             <a className='cursor-pointer'>
               <svg
@@ -35,51 +35,37 @@ export default function Footer() {
           </Link>
           <Image
             src={myImage}
-            className='rounded-full'
+            className='block m-auto rounded-full '
             alt='Image of uwenayoallain'
             draggable='false'
           />
         </div>
-        <div className='h-full col-span-1 mt-2 md:text-center'>
+        <div className='h-full mt-2 text-center'>
           <p className='text-lg leading-10'>Site Map</p>
-          <div>
+          <div className='grid grid-cols-2 md:inline-block'>
             <Link href={"/"}>
-              <a className='link'>Home</a>
+              <a className='block link'>Home</a>
             </Link>
-          </div>
-          <div>
             <Link href={"/about"}>
-              <a className='link'>About</a>
+              <a className='block link'>About</a>
             </Link>
-          </div>
-          <div>
             <Link href={"/blog"}>
-              <a className='link'>Blog</a>
+              <a className='block link'>Blog</a>
             </Link>
-          </div>
-          <div>
             <Link href={"/newsletter"}>
-              <a className='link'>Newsletter</a>
+              <a className='block link'>Newsletter</a>
             </Link>
-          </div>
-          <div>
             <Link href={"/uses"}>
-              <a className='link'>Uses</a>
+              <a className='block link'>Uses</a>
             </Link>
-          </div>
-          <div>
             <Link href={"/dashboard"}>
-              <a className='link'>Dashboard</a>
+              <a className='block link'>Dashboard</a>
             </Link>
-          </div>
-          <div>
             <Link href={"/timeline"}>
-              <a className='link'>Timeline</a>
+              <a className='block link'>Timeline</a>
             </Link>
-          </div>
-          <div>
             <Link href={"/allpages"}>
-              <a className='link'>All Pages</a>
+              <a className='block link'>All Pages</a>
             </Link>
           </div>
         </div>
@@ -142,7 +128,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <p className='w-full text-center md:absolute md:bottom-0'>
+      <p className='w-full text-center'>
         All right reserved - uwenayoallain &copy; {new Date().getFullYear()}
       </p>
     </div>
