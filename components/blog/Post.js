@@ -91,7 +91,7 @@ export default function Post({
       <InnerLink
         href={"/" + path}
         content='Read More'
-        className='absolute bottom-0 !w-10/12 md:!w-max md:left-8'
+        className='absolute bottom-0 !w-10/12 lg:!w-max lg:left-8'
       />
     </div>
   );

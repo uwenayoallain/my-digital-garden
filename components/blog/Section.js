@@ -20,7 +20,7 @@ export default function Section({
 
 export const Handler = ({ children, height = "md:h-3/4", ...props }) => {
   return (
-    <div className={"w-full md:w-1/2 h-full" + height} {...props}>
+    <div className={"w-full md:w-1/2 h-full " + height} {...props}>
       {children}
     </div>
   );

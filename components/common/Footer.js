@@ -8,8 +8,8 @@ export default function Footer() {
     <div
       className='relative h-screen font-medium leading-10 capitalize'
       id='footer'>
-      <div className='grid md:grid-cols-4 pt-[10%] p-6 w-11/12 mx-auto'>
-        <div className='text-lg leading-10 h-max'>
+      <div className='grid md:grid-cols-3 lg:grid-cols-4 pt-[10%] p-6 w-11/12 mx-auto'>
+        <div className='text-lg leading-10 h-max md:row-span-1'>
           <Link href={"/"}>
             <a className='cursor-pointer'>
               <svg
@@ -40,7 +40,7 @@ export default function Footer() {
             draggable='false'
           />
         </div>
-        <div className='h-full mt-2 text-center'>
+        <div className='h-full mt-2 text-center md:row-span-2'>
           <p className='text-lg leading-10'>Site Map</p>
           <div className='grid grid-cols-2 md:inline-block'>
             <Link href={"/"}>
@@ -69,7 +69,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        <div className='h-full col-span-1 mt-2'>
+        <div className='h-full col-span-1 mt-2 md:row-span-2'>
           <p className='text-lg leading-10'>Newsletter</p>
           <p className='text-sm text-gray-700 dark:text-gray-300'>
             Stay up to date with the latest news and updates
@@ -80,7 +80,7 @@ export default function Footer() {
             <SubmitButton type='submit' content='Submit' />
           </Form>
         </div>
-        <div className='h-full col-span-1 pb-10 mt-2 ml-4'>
+        <div className='h-full pb-10 mt-2 ml-4'>
           <p className='text-lg leading-10'>Contact</p>
           <p className='text-sm text-gray-700 dark:text-gray-300'>
             Contact me through social media.

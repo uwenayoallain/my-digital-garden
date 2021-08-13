@@ -72,7 +72,7 @@ export default function PostLooper({
       {" "}
       {!feacturedposts ? (
         <>
-          <div className='w-1/2'>
+          <Handler>
             <SubHeading>
               {" "}
               Search the blog using keywords or category{" "}
@@ -84,14 +84,14 @@ export default function PostLooper({
               Items={filteredPosts.length}
               label='Search the blog'
             />
-          </div>{" "}
+          </Handler>
           <div className='w-full m-5'>
             <TagsLooper
               elements={uniqueTags}
               currentSearchValue={searchValue}
               appendSearch={handlesearchbyTag}
             />{" "}
-          </div>{" "}
+          </div>
         </>
       ) : (
         <>
@@ -132,7 +132,7 @@ export default function PostLooper({
         <Section>
           <Handler>
             <Heading> Nothing Found in the blog </Heading>{" "}
-            {searchValue != "" ? (
+            {searchValue ? (
               <SubHeading>
                 It looks like{" "}
                 <span className='text-skin-base'> `{searchValue.trim()}` </span>{" "}
@@ -141,25 +141,22 @@ export default function PostLooper({
                 <a
                   href='#search the blog'
                   className='text-skin-base hover:underline '>
-                  different keyword or the categories above{" "}
+                  different keyword or the categories above.{" "}
+                </a>
+              </SubHeading>
+            ) : (
+              <SubHeading>
+                It looks like there is no content on the blog and it is not
+                caused by a search, if this is not a development site you need
+                to contact the{" "}
+                <a
+                  href='https://github.com/uwenayoallain/'
+                  className='text-skin-base hover:underline'>
+                  {" "}
+                  maintainer at github{" "}
                 </a>
                 .{" "}
               </SubHeading>
-            ) : (
-              <>
-                <SubHeading>
-                  It looks like there is no content on the blog and it is not
-                  caused by a search, if this is not a development site you need
-                  to contact the{" "}
-                  <a
-                    href='https://github.com/uwenayoallain/'
-                    className='text-skin-base hover:underline'>
-                    {" "}
-                    maintainer at github{" "}
-                  </a>
-                  .{" "}
-                </SubHeading>{" "}
-              </>
             )}{" "}
           </Handler>
           <Handler height=''>
