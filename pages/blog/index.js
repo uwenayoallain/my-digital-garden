@@ -3,7 +3,7 @@ import { getAllFilesFrontMatter } from "@/lib/mdx";
 import Container from "@/components/simplifiers/Container";
 import Demo from "@/public/images/demo.png";
 import PostLooper from "@/components/blog/PostLooper";
-import Section from "@/components/blog/Section";
+import Section, { Handler } from "@/components/blog/Section";
 import Heading from "@/components/blog/Heading";
 import SubHeading from "@/components/blog/SubHeading";
 import InnerLink, { ButtonLinks } from "@/components/common/innerLink";
@@ -14,7 +14,7 @@ export default function Blog({ posts }) {
   return (
     <Container>
       <Section>
-        <div className='w-1/2 h-3/4'>
+        <Handler>
           <Heading>My digital Garden as a developer</Heading>
           <SubHeading>
             This is my personal blog, where I write about the things I&apos;m
@@ -22,10 +22,10 @@ export default function Blog({ posts }) {
             <ButtonLinks />
             <ArrowLink direction='bottom' to='#posts' />
           </SubHeading>
-        </div>
-        <div className='w-1/2 h-full'>
+        </Handler>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
+        </Handler>
       </Section>
       <Section title='posts' className='!h-auto pb-10'>
         <div className='w-full h-full'>
@@ -34,10 +34,10 @@ export default function Blog({ posts }) {
         </div>
       </Section>
       <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
-        <div className='w-1/2 h-full'>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
-        <div className='w-1/2 h-3/4'>
+        </Handler>
+        <Handler>
           <Heading>Every one has a life story to share,me too.</Heading>
           <SubHeading>
             are you&apos;re interested in my story?,check out my story about
@@ -45,7 +45,7 @@ export default function Blog({ posts }) {
             to overcome them.
             <InnerLink href='/life' content='Read more here' />
           </SubHeading>
-        </div>
+        </Handler>
       </Section>
     </Container>
   );

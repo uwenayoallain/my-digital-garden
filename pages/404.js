@@ -1,4 +1,4 @@
-import Section from "@/components/blog/Section";
+import Section, { Handler } from "@/components/blog/Section";
 import Heading from "@/components/blog/Heading";
 import SubHeading from "@/components/blog/SubHeading";
 import { useRouter } from "next/router";
@@ -7,13 +7,15 @@ import { ButtonLinks } from "@/components/common/innerLink";
 import PostLooper from "@/components/blog/PostLooper";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import InnerLink from "@/components/common/innerLink";
+import ImageHolder from "@/components/common/ImageHolder";
+import Demo from "@/public/images/demo.png";
 
 export default function Custom404({ posts }) {
   const path = useRouter();
   return (
     <>
       <Section>
-        <div className='w-1/2 h-3/4'>
+        <Handler>
           <Heading>
             <span className=''>
               4<span className='text-skin-base'>0</span>4
@@ -31,8 +33,10 @@ export default function Custom404({ posts }) {
             <ButtonLinks />
             <ArrowLink direction='bottom' to='#more' />
           </SubHeading>
-        </div>
-        <div className='w-1/2 h-full'></div>
+        </Handler>
+        <Handler height=''>
+          <ImageHolder src={Demo} />
+        </Handler>
       </Section>
       <Section title='more' className='!h-auto pb-10'>
         <div className='w-full h-full'>
@@ -40,8 +44,10 @@ export default function Custom404({ posts }) {
         </div>
       </Section>
       <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
-        <div className='w-1/2 h-full'></div>
-        <div className='w-1/2 h-3/4'>
+        <Handler height=''>
+          <ImageHolder src={Demo} />
+        </Handler>
+        <Handler>
           <Heading>Uwenayoallain(Yarison allain)</Heading>
           <SubHeading>
             Hi there, I&apos;m a junior[maybe senior] developer and a learner at{" "}
@@ -58,7 +64,7 @@ export default function Custom404({ posts }) {
             </a>
             <InnerLink href='/about' content='More about me' />
           </SubHeading>
-        </div>
+        </Handler>
       </Section>
     </>
   );

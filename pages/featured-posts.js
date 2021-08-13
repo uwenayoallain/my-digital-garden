@@ -1,4 +1,4 @@
-import Section from "@/components/blog/Section";
+import Section, { Handler } from "@/components/blog/Section";
 import Heading from "@/components/blog/Heading";
 import SubHeading from "@/components/blog/SubHeading";
 import ArrowLink from "@/components/common/ArrowLink";
@@ -14,7 +14,7 @@ export default function FeaturedPosts({ posts }) {
   return (
     <PageLayout>
       <Section title='heading'>
-        <div className='w-1/2 h-3/4'>
+        <Handler>
           <Heading>Featured Posts</Heading>
           <SubHeading>
             Featured posts are blog posts with higher visibility and they are
@@ -22,10 +22,10 @@ export default function FeaturedPosts({ posts }) {
             <ButtonLinks />
             <ArrowLink direction='bottom' to='#featured-posts' />
           </SubHeading>
-        </div>
-        <div className='w-1/2 h-full'>
+        </Handler>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
+        </Handler>
       </Section>
       <Section title='featured-posts' className='!h-auto pb-10'>
         <div className='w-full h-full'>
@@ -33,7 +33,7 @@ export default function FeaturedPosts({ posts }) {
         </div>
       </Section>
       <Section title='actions'>
-        <div className='w-1/2 h-3/4'>
+        <Handler>
           <Heading>Action Tracker</Heading>
           <SubHeading>
             I&apos;m just going to develop an action tracker for my open source
@@ -44,10 +44,10 @@ export default function FeaturedPosts({ posts }) {
               content='More about how i track my actions'
             />
           </SubHeading>
-        </div>
-        <div className='w-1/2 h-full'>
+        </Handler>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
+        </Handler>
       </Section>
     </PageLayout>
   );

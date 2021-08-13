@@ -3,7 +3,7 @@ import Blockquote from "@/components/blog/Quote";
 import Looper from "@/components/simplifiers/Looper";
 import Badge from "@/components/blog/Badge";
 import OuterLink from "@/components/common/OuterLink";
-import Section from "@/components/blog/Section";
+import Section, { Handler } from "@/components/blog/Section";
 import Myimage from "@/public/images/my-image.jpg";
 import Heading from "@/components/blog/Heading";
 import SocialCard from "@/components/blog/SocialCard";
@@ -19,7 +19,7 @@ const Index = () => {
     <PageLayout>
       <div>
         <Section title='heading'>
-          <div className='w-1/2 h-3/4'>
+          <Handler>
             <Heading>I&apos;m uwenayoallain</Heading>
             <SubHeading>
               I am a developer, a blogger and an open source lover based in
@@ -28,8 +28,8 @@ const Index = () => {
               learned.
               <ButtonLinks firsthref='/about' firstbutton='About me' />
             </SubHeading>
-          </div>
-          <div className='w-1/2 h-full'>
+          </Handler>
+          <Handler height=''>
             <div className='m-auto rounded-full shadow w-36 h-36'>
               <Image
                 className='rounded-full'
@@ -41,15 +41,15 @@ const Index = () => {
               />
             </div>
             <SocialCard />
-          </div>
+          </Handler>
           <ArrowLink direction='bottom' to='#about' />
           <hr />
         </Section>
         <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
-          <div className='w-1/2 h-full'>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
-          <div className='w-1/2 h-3/4'>
+          </Handler>
+          <Handler>
             <Heading>Uwenayoallain(Yarison allain)</Heading>
             <SubHeading>
               Hi there, I&apos;m a junior developer and a learner at{" "}
@@ -66,10 +66,10 @@ const Index = () => {
               </a>
               <InnerLink href='/about' content='More about me' />
             </SubHeading>
-          </div>
+          </Handler>
         </Section>
         <Section title='blog'>
-          <div className='w-1/2 h-3/4'>
+          <Handler>
             <Heading>My personal blog:</Heading>
             <SubHeading>
               i like sharing some stuffs that i&apos;ve gained with others , i
@@ -83,10 +83,10 @@ const Index = () => {
               is my favorite, check out my blog!
               <InnerLink href='/blog' content='More about my blog' />
             </SubHeading>
-          </div>
-          <div className='w-1/2 h-full'>
+          </Handler>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
+          </Handler>
         </Section>
       </div>
     </PageLayout>

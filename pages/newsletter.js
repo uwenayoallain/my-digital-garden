@@ -1,15 +1,17 @@
-import Section from "@/components/blog/Section";
+import Section, { Handler } from "@/components/blog/Section";
 import Heading from "@/components/blog/Heading";
 import SubHeading from "@/components/blog/SubHeading";
 import ArrowLink from "@/components/common/ArrowLink";
 import { ButtonLinks } from "@/components/common/innerLink";
 import InnerLink from "@/components/common/innerLink";
+import ImageHolder from "@/components/common/ImageHolder";
+import Demo from "@/public/images/demo.png";
 
 export default function Actions() {
   return (
     <>
       <Section>
-        <div className='w-1/2 h-3/4'>
+        <Handler>
           <Heading>
             <span className=''>
               T<span className='text-skin-base'>0D</span>o
@@ -21,12 +23,16 @@ export default function Actions() {
             <ButtonLinks />
             <ArrowLink direction='bottom' to='#more' />
           </SubHeading>
-        </div>
-        <div className='w-1/2 h-full'></div>
+        </Handler>
+        <Handler height=''>
+          <ImageHolder src={Demo} />
+        </Handler>
       </Section>
       <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
-        <div className='w-1/2 h-full'></div>
-        <div className='w-1/2 h-3/4'>
+        <Handler height=''>
+          <ImageHolder src={Demo} />
+        </Handler>
+        <Handler>
           <Heading>Uwenayoallain(Yarison allain)</Heading>
           <SubHeading>
             Hi there, I&apos;m a junior[maybe senior] developer and a learner at{" "}
@@ -43,7 +49,7 @@ export default function Actions() {
             </a>
             <InnerLink href='/about' content='More about me' />
           </SubHeading>
-        </div>
+        </Handler>
       </Section>
     </>
   );

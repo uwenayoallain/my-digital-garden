@@ -3,7 +3,7 @@ import { FormSearchInput } from "../simplifiers/Form";
 import { TagsLooper } from "../simplifiers/Looper";
 import Heading from "./Heading";
 import Post from "./Post";
-import Section from "@/components/blog/Section";
+import Section, { Handler } from "@/components/blog/Section";
 import SubHeading from "./SubHeading";
 import Demo from "@/public/images/demo.png";
 import ImageHolder from "@/components/common/ImageHolder";
@@ -19,13 +19,11 @@ export default function PostLooper({
   const [sort, setSort] = useState(sorts[0]);
   useEffect(() => {
     if (feacturedposts) {
-      setblogPosts(
-        blogPosts.filter((post) => post.frontMatter.featured === true)
-      );
+      setblogPosts(posts.filter((post) => post.frontMatter.featured === true));
     } else {
       if (sort === "date") {
         setblogPosts(
-          blogPosts
+          posts
             .filter((post) => !post.frontMatter.featured)
             .sort((a, b) => {
               return (
@@ -35,7 +33,7 @@ export default function PostLooper({
         );
       } else if (sort === "views") {
         setblogPosts(
-          blogPosts
+          posts
             .filter((post) => !post.frontMatter.featured)
             .sort((a, b) => {
               return (
@@ -45,9 +43,7 @@ export default function PostLooper({
         );
       }
     }
-    return () => {};
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [feacturedposts, sort]);
+  }, [feacturedposts, posts, sort]);
 
   const tags = blogPosts.map((post) => post.frontMatter.tags.toString());
   const uniqueTags = [...new Set([tags].toString().trim().split(","))];
@@ -64,7 +60,6 @@ export default function PostLooper({
         .includes(searchValue.trim().toLowerCase())
   );
   const filteredPosts = postsBeforeFilter.slice(0, size);
-
   const handlesearchbyTag = (tag) => {
     if (searchValue.trim().toLowerCase().includes(tag)) {
       setSearchValue(searchValue.replace(tag, "").trim());
@@ -135,7 +130,7 @@ export default function PostLooper({
       </div>{" "}
       {!filteredPosts.length ? (
         <Section>
-          <div className='w-1/2 h-3/4'>
+          <Handler>
             <Heading> Nothing Found in the blog </Heading>{" "}
             {searchValue != "" ? (
               <SubHeading>
@@ -166,10 +161,10 @@ export default function PostLooper({
                 </SubHeading>{" "}
               </>
             )}{" "}
-          </div>{" "}
-          <div className='w-1/2 h-full'>
+          </Handler>
+          <Handler height=''>
             <ImageHolder src={Demo} />{" "}
-          </div>{" "}
+          </Handler>
         </Section>
       ) : (
         <div className='grid grid-cols-3 w-full h-full py-4 px-0.5 mb-5'>

@@ -6,9 +6,9 @@ import myImage from "@/public/images/my-image.jpg";
 export default function Footer() {
   return (
     <div
-      className='relative h-screen font-medium leading-10 capitalize relativ'
+      className='relative h-screen font-medium leading-10 capitalize'
       id='footer'>
-      <div className='grid grid-cols-4 pt-[10%] p-6 w-11/12 mx-auto'>
+      <div className='grid md:grid-cols-4 pt-[10%] p-6 w-11/12 mx-auto'>
         <div className='text-lg leading-10'>
           <Link href={"/"}>
             <a className='cursor-pointer'>
@@ -40,7 +40,7 @@ export default function Footer() {
             draggable='false'
           />
         </div>
-        <div className='h-full mt-2 text-center'>
+        <div className='h-full col-span-1 mt-2 md:text-center'>
           <p className='text-lg leading-10'>Site Map</p>
           <div>
             <Link href={"/"}>
@@ -94,7 +94,7 @@ export default function Footer() {
             <SubmitButton type='submit' content='Submit' />
           </Form>
         </div>
-        <div className='h-full col-span-1 mt-2 ml-4'>
+        <div className='h-full col-span-1 pb-10 mt-2 ml-4'>
           <p className='text-lg leading-10'>Contact</p>
           <p className='text-sm text-gray-700 dark:text-gray-300'>
             Contact me through social media.
@@ -142,7 +142,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <p className='absolute bottom-0 w-full text-center'>
+      <p className='w-full text-center md:absolute md:bottom-0'>
         All right reserved - uwenayoallain &copy; {new Date().getFullYear()}
       </p>
     </div>

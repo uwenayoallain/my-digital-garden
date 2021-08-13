@@ -1,4 +1,4 @@
-import Section from "@/components/blog/Section";
+import Section, { Handler } from "@/components/blog/Section";
 import Heading from "@/components/blog/Heading";
 import SubHeading from "@/components/blog/SubHeading";
 import ArrowLink from "@/components/common/ArrowLink";
@@ -15,7 +15,7 @@ export default function AllPages() {
   return (
     <PageLayout>
       <Section title='heading'>
-        <div className='w-1/2 h-3/4'>
+        <Handler>
           <Heading>All pages</Heading>
           <SubHeading>
             This page contains all pages that are in the site, including those
@@ -23,16 +23,16 @@ export default function AllPages() {
             <ButtonLinks />
             <ArrowLink direction='bottom' to='#overview' />
           </SubHeading>
-        </div>
-        <div className='w-1/2 h-full'>
+        </Handler>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
+        </Handler>
       </Section>
       <Section title='overview' bg='dark:bg-gray-800 bg-gray-50'>
-        <div className='w-1/2 h-full'>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
-        <div className='w-1/2 h-3/4'>
+        </Handler>
+        <Handler>
           <Heading>All Pages</Heading>
           <SubHeading>
             Some anchor tags that links to sections that tells more about a
@@ -51,10 +51,10 @@ export default function AllPages() {
               ]}
             />
           </div>
-        </div>
+        </Handler>
       </Section>
       <Section title='about'>
-        <div className='w-1/2 h-3/4'>
+        <Handler>
           <Heading>Just still learning</Heading>
           <SubHeading>
             I&apos;m a learner at{" "}
@@ -75,16 +75,16 @@ export default function AllPages() {
               content='More about my open source projects'
             />
           </SubHeading>
-        </div>
-        <div className='w-1/2 h-full'>
+        </Handler>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
+        </Handler>
       </Section>
       <Section title='featured-posts' bg='dark:bg-gray-800 bg-gray-50'>
-        <div className='w-1/2 h-full'>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
-        <div className='w-1/2 h-3/4'>
+        </Handler>
+        <Handler>
           <Heading>Featured Posts</Heading>
           <SubHeading>
             Featured posts are blog posts with higher visibility and they are
@@ -94,10 +94,10 @@ export default function AllPages() {
               content='More about featured posts'
             />
           </SubHeading>
-        </div>
+        </Handler>
       </Section>
       <Section title='actions'>
-        <div className='w-1/2 h-3/4'>
+        <Handler>
           <Heading>Action Tracker</Heading>
           <SubHeading>
             I&apos;m just going to develop an action tracker for my open source
@@ -108,26 +108,26 @@ export default function AllPages() {
               content='More about how i track my actions'
             />
           </SubHeading>
-        </div>
-        <div className='w-1/2 h-full'>
+        </Handler>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
+        </Handler>
       </Section>
       <Section title='uses' bg='dark:bg-gray-800 bg-gray-50'>
-        <div className='w-1/2 h-full'>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
-        <div className='w-1/2 h-3/4'>
+        </Handler>
+        <Handler>
           <Heading>Some stuffs that i use, maybe currently</Heading>
           <SubHeading>
             This is not something more but just a bunch of things that i use in
             my career.
             <InnerLink href='/action-tracker' content='More about what i use' />
           </SubHeading>
-        </div>
+        </Handler>
       </Section>
       <Section title='open-source'>
-        <div className='w-1/2 h-3/4'>
+        <Handler>
           <Heading>Open Source</Heading>
           <SubHeading>
             I am a developer, a blogger and an open source lover based in Rwanda
@@ -138,10 +138,10 @@ export default function AllPages() {
               content='More about my open source projects'
             />
           </SubHeading>
-        </div>
-        <div className='w-1/2 h-full'>
+        </Handler>
+        <Handler height=''>
           <ImageHolder src={Demo} />
-        </div>
+        </Handler>
       </Section>
     </PageLayout>
   );

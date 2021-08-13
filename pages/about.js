@@ -2,7 +2,7 @@ import PageLayout from "@/layouts/page";
 import Looper from "@/components/simplifiers/Looper";
 import Badge from "@/components/blog/Badge";
 import OuterLink from "@/components/common/OuterLink";
-import Section from "@/components/blog/Section";
+import Section, { Handler } from "@/components/blog/Section";
 import Heading from "@/components/blog/Heading";
 import SubHeading from "@/components/blog/SubHeading";
 import ArrowLink from "@/components/common/ArrowLink";
@@ -15,7 +15,7 @@ const About = () => {
     <PageLayout>
       <div>
         <Section title='heading'>
-          <div className='w-1/2 h-3/4'>
+          <Handler>
             <Heading>I&apos;m uwenayoallain</Heading>
             <SubHeading>
               I am a developer, a blogger and an open source lover based in
@@ -25,16 +25,16 @@ const About = () => {
               <ButtonLinks />
               <ArrowLink direction='bottom' to='#about' />
             </SubHeading>
-          </div>
-          <div className='w-1/2 h-full'>
+          </Handler>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
+          </Handler>
         </Section>
         <Section title='about' bg='dark:bg-gray-800 bg-gray-50'>
-          <div className='w-1/2 h-full'>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
-          <div className='w-1/2 h-3/4'>
+          </Handler>
+          <Handler>
             <Heading>Just still learning</Heading>
             <SubHeading>
               I&apos;m a learner at{" "}
@@ -55,10 +55,10 @@ const About = () => {
                 content='More about my open source projects'
               />
             </SubHeading>
-          </div>
+          </Handler>
         </Section>
         <Section title='actions'>
-          <div className='w-1/2 h-3/4'>
+          <Handler>
             <Heading>Action Tracker</Heading>
             <SubHeading>
               I&apos;m just going to develop an action tracker for my open
@@ -69,16 +69,16 @@ const About = () => {
                 content='More about how i track my actions'
               />
             </SubHeading>
-          </div>
-          <div className='w-1/2 h-full'>
+          </Handler>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
+          </Handler>
         </Section>
         <Section title='programming' bg='dark:bg-gray-800 bg-gray-50 h-auto'>
-          <div className='w-1/2 h-full'>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
-          <div className='w-1/2 h-3/4'>
+          </Handler>
+          <Handler>
             <Heading>Tools i mostly use</Heading>
             <Looper
               elements={[
@@ -108,10 +108,10 @@ const About = () => {
             <SubHeading>
               <InnerLink href='/uses' content='More about tools i use' />
             </SubHeading>
-          </div>
+          </Handler>
         </Section>
         <Section title='daily.dev'>
-          <div className='w-1/2 h-3/4'>
+          <Handler>
             <Heading>Dev news</Heading>
             <SubHeading>
               I highly recommend giving daily.dev a try. It’s an awesome coding
@@ -124,10 +124,10 @@ const About = () => {
                 title='Daily.dev'
               />
             </SubHeading>
-          </div>
-          <div className='w-1/2 h-full'>
+          </Handler>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
+          </Handler>
         </Section>
       </div>
     </PageLayout>

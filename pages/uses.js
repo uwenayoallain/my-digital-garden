@@ -3,7 +3,7 @@ import Blockquote from "@/components/blog/Quote";
 import Looper from "@/components/simplifiers/Looper";
 import Badge from "@/components/blog/Badge";
 import OuterLink from "@/components/common/OuterLink";
-import Section from "@/components/blog/Section";
+import Section, { Handler } from "@/components/blog/Section";
 import Myimage from "@/public/images/my-image.jpg";
 import Heading from "@/components/blog/Heading";
 import SocialCard from "@/components/blog/SocialCard";
@@ -19,7 +19,7 @@ const About = () => {
     <PageLayout>
       <div>
         <Section title='heading'>
-          <div className='w-1/2 h-3/4'>
+          <Handler>
             <Heading>Some stuffs that i use, maybe currently</Heading>
             <SubHeading>
               This is not something more but just a bunch of things that i use
@@ -27,16 +27,16 @@ const About = () => {
               <ButtonLinks />
               <ArrowLink direction='bottom' to='#programming' />
             </SubHeading>
-          </div>
-          <div className='w-1/2 h-full'>
+          </Handler>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
+          </Handler>
         </Section>
         <Section title='programming' bg='dark:bg-gray-800 bg-gray-50 h-auto'>
-          <div className='w-1/2 h-full'>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
-          <div className='w-1/2 h-3/4'>
+          </Handler>
+          <Handler>
             <Heading>Tools i mostly use[programming languages]</Heading>
             <SubHeading>
               <Looper
@@ -58,10 +58,10 @@ const About = () => {
                 ]}
               />
             </SubHeading>
-          </div>
+          </Handler>
         </Section>
         <Section title='tools'>
-          <div className='w-1/2 h-3/4'>
+          <Handler>
             <Heading>Services || tools i mostly use</Heading>
             <SubHeading>
               <Looper
@@ -79,10 +79,10 @@ const About = () => {
                 ]}
               />
             </SubHeading>
-          </div>
-          <div className='w-1/2 h-full'>
+          </Handler>
+          <Handler height=''>
             <ImageHolder src={Demo} />
-          </div>
+          </Handler>
         </Section>
       </div>
     </PageLayout>
