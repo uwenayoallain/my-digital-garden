@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[uwenayoallain's  digital garden]]></title>
+        <description><![CDATA[I am a developer, a blogger and an open source lover based in Rwanda🇷🇼. This is my digital garden, where I write about the things I&apos;m working on and share what I've learned.]]></description>
+        <link>https://localhost:3000//</link>
+        <image>
+            <url>https://yarisonallain.vercel.app/images/demo.png</url>
+            <title>uwenayoallain&apos;s  digital garden</title>
+            <link>https://localhost:3000//</link>
+        </image>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 14 Aug 2021 11:07:37 GMT</lastBuildDate>
+        <atom:link href="https://localhost:3000//rss.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Sat, 24 Jul 2021 22:00:00 GMT</pubDate>
+        <copyright><![CDATA[function getFullYear() { [native code] } - uwenayoallain]]></copyright>
+        <language><![CDATA[en]]></language>
+        <managingEditor><![CDATA[uwenayoallain]]></managingEditor>
+        <webMaster><![CDATA[uwenayoallain]]></webMaster>
+        <ttl>60</ttl>
+        <item>
+            <title><![CDATA[Blogging is cool]]></title>
+            <description><![CDATA[Blogging is cool in 2021]]></description>
+            <link>https://localhost:3000//blog/hello-world</link>
+            <guid isPermaLink="true">https://localhost:3000//blog/hello-world</guid>
+            <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
+            <pubDate>Sat, 24 Jul 2021 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[My first Blog post]]></title>
+            <description><![CDATA[My first Blog post in 2021]]></description>
+            <link>https://localhost:3000//blog/my-first-blog-post</link>
+            <guid isPermaLink="true">https://localhost:3000//blog/my-first-blog-post</guid>
+            <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
+            <pubDate>Mon, 26 Jul 2021 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[My first Blog post]]></title>
+            <description><![CDATA[My first Blog post in 2021]]></description>
+            <link>https://localhost:3000//blog/new-blog</link>
+            <guid isPermaLink="true">https://localhost:3000//blog/new-blog</guid>
+            <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
+            <pubDate>Mon, 26 Jul 2021 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[how i built my blog]]></title>
+            <description><![CDATA[how i built my blog with next js , mdx and tailwindcss]]></description>
+            <link>https://localhost:3000//blog/now</link>
+            <guid isPermaLink="true">https://localhost:3000//blog/now</guid>
+            <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
+            <pubDate>Mon, 19 Jul 2021 22:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Blogging is cool]]></title>
+            <description><![CDATA[Blogging is cool in 2021]]></description>
+            <link>https://localhost:3000//blog/test-post</link>
+            <guid isPermaLink="true">https://localhost:3000//blog/test-post</guid>
+            <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
+            <pubDate>Sat, 24 Jul 2021 22:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

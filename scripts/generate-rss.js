@@ -1,7 +1,8 @@
-import { getAllFilesFrontMatter } from "@/lib/mdx";
-import RSS from "rss";
-const hostUrl = process.env.NEXT_PUBLIC_VERCEL_URL;
-
+const fs = require("fs");
+const RSS = require("rss");
+const path = require("path");
+const hostUrl = process.env.NEXT_PUBLIC_VERCEL_URL + "/";
+const matter = require("gray-matter");
 const buildFeed = (items) => {
   const feed = new RSS({
     title: "uwenayoallain's  digital garden",
@@ -30,22 +31,24 @@ const buildFeed = (items) => {
 
   return feed;
 };
-
-export const getServerSideProps = async (context) => {
-  if (context && context.res) {
-    const { res } = context;
-    const articles = await getAllFilesFrontMatter();
-    const feed = buildFeed(articles);
-    res.setHeader("content-type", "text/xml");
-    res.write(feed.xml({ indent: true }));
-    res.end();
-  }
-
-  return {
-    props: {},
-  };
+const generateFeed = async () => {
+  const POSTS_PATH = path.join(process.cwd(), "posts");
+  const postFilePaths = fs.readdirSync(POSTS_PATH);
+  const articles = await Promise.all(
+    postFilePaths.map(async (post) => {
+      const slug = post.replace(".mdx", "");
+      const source = fs.readFileSync(path.join(POSTS_PATH, post));
+      const { data } = matter(source);
+      return {
+        frontMatter: {
+          slug: slug,
+          ...data,
+        },
+      };
+    })
+  );
+  const feed = buildFeed(articles);
+  fs.writeFileSync("public/rss.xml", feed.xml({ indent: true }));
 };
 
-const RssPage = () => null;
-
-export default RssPage;
+module.exports = generateFeed;
