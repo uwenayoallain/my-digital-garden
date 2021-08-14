@@ -1,4 +1,4 @@
-User-agent: *
+user-agent: *
 Disallow:
 
 Sitemap: http://localhost:3000/sitemap.xml

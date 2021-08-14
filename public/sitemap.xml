@@ -29,10 +29,6 @@
   </url>
 
   <url>
-    <loc>https://localhost:3000/rss.xml</loc>
-  </url>
-
-  <url>
     <loc>https://localhost:3000/uses</loc>
   </url>
 

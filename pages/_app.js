@@ -7,7 +7,8 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { ThemeProvider } from "@/utils/Themes";
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
+import defaultSeoConfig from "./../next-seo.json";
 import NProgress from "nprogress";
 import Router from "next/router";
 function MyApp({ Component, pageProps }) {
@@ -28,27 +29,17 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <DefaultSeo
-        title='uwenayoallain'
-        description="I am a developer, a blogger and an open source lover based in Rwanda. This is my digital garden, where I write about the things I'm working on and share whatI've learned."
+        {...defaultSeoConfig}
+        title={path == "" ? "home" : path}
+        canonical={process.env.NEXT_PUBLIC_VERCEL_URL}
+      />
+      <SocialProfileJsonLd
+        type='Person'
+        name='uwenayoallain'
+        url={process.env.NEXT_PUBLIC_VERCEL_URL}
+        sameAs={["https://twitter.com/uwenayoallain"]}
       />
       <ThemeProvider>
-        <Head>
-          <link rel='manifest' href='./site.webmanifest' />
-          <link rel='alternate' type='application/rss+xml' href='/rss.xml' />
-          <link rel='alternate' type='application/atom+xml' href='/atom.xml' />
-          <link rel='alternate' type='application/json' href='/feed.json' />
-          <meta
-            name='viewport'
-            content='width=device-width, initial-scale=1.0'
-          />
-          <meta name='keywords' content='uwenayo allain' />
-          <link
-            rel='shortcut icon'
-            href='./images/my-image.jpg'
-            type='image/x-icon'
-          />
-          <title>uwenayoallain | {path == "" ? "home" : path}</title>
-        </Head>
         <div
           className={`main relative w-full dark:bg-gray-900 dark:text-white ${theme}`}
           id='main'>

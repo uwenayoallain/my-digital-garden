@@ -1,0 +1,49 @@
+{
+    "titleTemplate": "uwenayoallain | %s",
+    "description": "I am a developer, a blogger and an open source lover based in Rwanda🇷🇼. This is my digital garden, where I write about the things I&apos;m working on and share what I've learned.",
+    "additionalMetaTags": [
+      { "name": "author", "content": "uwenayoallain" },
+      {
+          "name":"viewport",
+          "content":"width=device-width, initial-scale=1.0"
+      },
+      {
+        "name": "keywords",
+        "content": "homepage,engineer,developer,freelance,typescript,node.js,node,react,open-source,open source,web,blog,writer,writing,digital garden"
+      }
+    ],
+    "twitter": {
+      "cardType": "summary_large_image",
+      "handle": "uwenayoallain",
+      "site": "uwenayoallain"
+    },
+    "openGraph": {
+      "type": "website",
+      "locale": "en-US",
+      "site_name": "uwenayoallain",
+      "profile": {
+        "firstName": "yarison",
+        "lastName": "allain"
+      },
+      "images": [
+        {
+          "url": "/images/demo.png"
+        }
+      ]
+    },
+    "additionalLinkTags":[
+        {
+            "rel":"alternate",
+            "type":"application/rss+xml",
+            "href":"/rss.xml"
+        },{
+            "rel":"shortcut icon",
+            "href":"/images/my-image.jpg",
+            "type":"image/x-icon"
+        },{
+            "rel":"manifest",
+            "href":"/manifest.json"
+        }
+    ]
+  }
+  
