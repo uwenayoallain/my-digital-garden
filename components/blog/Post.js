@@ -18,7 +18,7 @@ export default function Post({
     <>
       <div className="relative z-0 block transition bg-gray-100 border-4 border-white dark:border-gray-900 ring-0 hover:ring-4 ring-skin-base dark:bg-gray-800 rounded-xl group">
         <CopyToClipboard
-          text={process.env.VERCEL_URL + path}
+          text={process.env.NEXT_PUBLIC_VERCEL_URL + path}
           onCopy={() => {
             setCopied(true);
             setTimeout(() => {

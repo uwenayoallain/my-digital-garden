@@ -1,3 +1,7 @@
 {
-  "extends": "next"
+  "extends": "next",
+  "settings": {
+    "import/no-unresolved": 0,
+    "import/extensions": 0
+}
 }

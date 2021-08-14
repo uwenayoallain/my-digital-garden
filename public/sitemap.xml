@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://localhost:3000/about</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/actions</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/allpages</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/featured-posts</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/index</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/newsletter</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/opensource</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/rss.xml</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/uses</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/blog/hello-world</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/blog/my-first-blog-post</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/blog/new-blog</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/blog/now</loc>
+  </url>
+
+  <url>
+    <loc>https://localhost:3000/blog/test-post</loc>
+  </url>
+</urlset>

@@ -34,6 +34,9 @@ function MyApp({ Component, pageProps }) {
       <ThemeProvider>
         <Head>
           <link rel='manifest' href='./site.webmanifest' />
+          <link rel='alternate' type='application/rss+xml' href='/rss.xml' />
+          <link rel='alternate' type='application/atom+xml' href='/atom.xml' />
+          <link rel='alternate' type='application/json' href='/feed.json' />
           <meta
             name='viewport'
             content='width=device-width, initial-scale=1.0'
