@@ -6,6 +6,7 @@ import { ButtonLinks } from "@/components/common/innerLink";
 import InnerLink from "@/components/common/innerLink";
 import ImageHolder from "@/components/common/ImageHolder";
 import Demo from "@/public/images/demo.png";
+import SubmitForm from "@/components/simplifiers/subscribe";
 
 export default function Actions() {
   return (
@@ -23,6 +24,14 @@ export default function Actions() {
             <ButtonLinks />
             <ArrowLink direction='bottom' to='#more' />
           </SubHeading>
+        </Handler>
+        <Handler height=''>
+          <ImageHolder src={Demo} />
+        </Handler>
+      </Section>
+      <Section>
+        <Handler>
+          <SubmitForm />
         </Handler>
         <Handler height=''>
           <ImageHolder src={Demo} />

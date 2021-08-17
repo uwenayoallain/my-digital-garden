@@ -52,10 +52,11 @@ export const Form = ({ children, ...props }) => {
   return <form {...props}>{children}</form>;
 };
 
-export const SubmitButton = ({ content, type = "button" }) => {
+export const SubmitButton = ({ content, type = "button", ...props }) => {
   return (
     <button
       type={type}
+      {...props}
       className='block w-3/5 p-2 m-auto my-2 text-white transition bg-gray-900 border-4 border-white rounded-full dark:border-gray-900 group dark:bg-white dark:text-gray-900 ring-0 hover:ring-4 hover:!text-skin-base ring-skin-base'>
       {content}
       <svg

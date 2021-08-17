@@ -3,24 +3,35 @@
     "next-seo.config"
   ],
   "ignoreUnused": [
+    "@tailwindcss/forms",
+    "@tailwindcss/typography",
     "next",
+    "prettier",
     "react",
-    "react-dom"
+    "react-dom",
+    "rss"
   ],
   "ignoreUnimported": [
-    "next-seo.config.js",
+    "next.config.js",
     "pages/404.js",
     "pages/_app.js",
     "pages/about.js",
     "pages/actions.js",
     "pages/allpages.js",
+    "pages/api/newsletter/index.js",
+    "pages/api/newsletter/subscribe.js",
+    "pages/api/newsletter/unsubscribe/[email].js",
+    "pages/api/subscribe.js",
     "pages/blog/[slug].js",
     "pages/blog/index.js",
     "pages/featured-posts.js",
     "pages/index.js",
+    "pages/newsletter.js",
     "pages/opensource.js",
     "pages/uses.js",
     "postcss.config.js",
+    "scripts/generate-rss.js",
+    "scripts/generate-sitemap.js",
     "tailwind.config.js"
   ]
 }
