@@ -1,20 +1,62 @@
-export const FormInput = ({ label, type, ...props }) => {
+import React from "react";
+function getFieldError(value, type) {
+  if (type != "text") {
+    if (!value) return `${type} is required!`;
+    const valueIsLongEnough = value.length >= 8;
+    const valueIsShortEnough = value.length <= 80;
+    if (!valueIsLongEnough) {
+      return "value must be at least 8 characters long";
+    } else if (!valueIsShortEnough) {
+      return "value must be no longer than 80 characters";
+    }
+  } else {
+    if (value) {
+      const optionalNotice = "This input is optional but it needs to be";
+      const valueIsLongEnough = value.length >= 6;
+      const valueIsShortEnough = value.length <= 70;
+      if (!valueIsLongEnough) {
+        return `${optionalNotice} at least 6 characters long.`;
+      } else if (!valueIsShortEnough) {
+        return `${optionalNotice} at most 70 characters long`;
+      }
+    }
+  }
+  return null;
+}
+export const FormInput = ({
+  label,
+  type = "text",
+  submitted = false,
+  ...props
+}) => {
   const id = label.trim().replace(" ", "").toLowerCase();
+  const [value, setValue] = React.useState("");
+  const [touched, setTouched] = React.useState(false);
+  const errorMessage = getFieldError(value, type);
+  const displayErrorMessage = (submitted || touched) && errorMessage;
   return (
-    <div className='relative mt-4' {...props}>
-      <input
-        type={type}
-        name={id}
-        id={id}
-        placeholder={label}
-        className='peer w-full my-2 p-2 rounded border !placeholder-transparent placeholder-gray-400 border-gray-400 !bg-transparent '
-        autoComplete={label}
-      />
-      <label
-        htmlFor='name'
-        className='absolute font-medium transition -translate-y-3 pointer-events-none left-2 peer-hover:-translate-y-3 peer-focus:-translate-y-3 bg-gradient-to-b dark:from-gray-900 dark:via-gray-900 from-white via-white to-transparent peer-placeholder-shown:translate-y-4'>
+    <div className='relative mx-2 my-4' {...props}>
+      <label htmlFor='name' className='transition'>
         {label}
       </label>
+      <input
+        type={type}
+        name={type}
+        id={id}
+        placeholder={label}
+        className='w-full my-2 p-2 rounded border !placeholder-transparent placeholder-gray-400 border-gray-400 !bg-transparent '
+        autoComplete={label}
+        onChange={(event) => setValue(event.currentTarget.value)}
+        onBlur={() => setTouched(true)}
+        pattern='[a-z]{3,10}'
+        required
+        aria-describedby={displayErrorMessage ? `${label}-error` : id}
+      />
+      {displayErrorMessage && (
+        <p id={`${id}-error`} className='text-red-700 '>
+          {errorMessage}
+        </p>
+      )}
     </div>
   );
 };
@@ -57,7 +99,7 @@ export const SubmitButton = ({ content, type = "button", ...props }) => {
     <button
       type={type}
       {...props}
-      className='block w-3/5 p-2 m-auto my-2 text-white transition bg-gray-900 border-4 border-white rounded-full dark:border-gray-900 group dark:bg-white dark:text-gray-900 ring-0 hover:ring-4 hover:!text-skin-base ring-skin-base'>
+      className='block w-max p-2 px-12 m-auto my-2 text-white transition bg-gray-900 border-4 border-white rounded-full dark:border-gray-900 group dark:bg-white dark:text-gray-900 ring-0 hover:ring-4 hover:!text-skin-base ring-skin-base'>
       {content}
       <svg
         xmlns='http://www.w3.org/2000/svg'

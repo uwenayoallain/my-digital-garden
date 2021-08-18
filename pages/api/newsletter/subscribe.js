@@ -2,12 +2,12 @@ import connectTodb from "@/lib/mongodb";
 connectTodb();
 import Subscriber from "@/lib/Models/models";
 
-export default async (req, res) => {
+export default async function handler(req, res) {
   if (req.method === "POST") {
     let { email, name } = req.body;
     if (email) {
       try {
-        name = name ?? email.split("@")[0];
+        name = (name === "" ? null : name) ?? email.split("@")[0];
         if ((await Subscriber.findOne({ email })) != null) {
           const subscriber = await Subscriber.findOneAndUpdate(
             { email },
@@ -41,9 +41,9 @@ export default async (req, res) => {
     }
   } else {
     res
-      .status(422)
+      .status(405)
       .send(
         `Uuuuhhh,using ${req.method} method is not supported in this end point consider contacting support at support@yarisonallain.com or [uwenayoallain@gmail.com] `
       );
   }
-};
+}
