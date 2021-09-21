@@ -21,7 +21,7 @@ export default function SubmitForm() {
       } catch (error) {
         console.log(error);
       }
-      // event.target.reset();
+      event.target.reset();
     }
   };
   return (
