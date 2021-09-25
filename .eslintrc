@@ -3,5 +3,19 @@
   "settings": {
     "import/no-unresolved": 0,
     "import/extensions": 0
-}
+  },
+  "rules": {
+    "import/no-anonymous-default-export": [
+      "error",
+      {
+        "allowArray": false,
+        "allowArrowFunction": true,
+        "allowAnonymousClass": false,
+        "allowAnonymousFunction": false,
+        "allowCallExpression": true, // The true value here is for backward compatibility
+        "allowLiteral": false,
+        "allowObject": false
+      }
+    ]
+  }
 }

@@ -6,16 +6,18 @@
     "start": "next start",
     "dev:css": "tailwindcss -o styles/app.css -w",
     "build:css": "tailwindcss -o styles/app.css",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
+    "axios": "^0.21.1",
     "countapi-js": "^1.0.2",
-    "feed": "^4.2.2",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.2",
     "mdx-prism": "^0.3.4",
+    "mongoose": "^5.13.7",
     "next": "latest",
     "next-mdx-remote": "^3.0.1",
     "next-seo": "^4.26.0",
@@ -34,8 +36,10 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.3.1",
+    "cypress": "^8.3.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.0.1",
+    "eslint-plugin-cypress": "^2.11.3",
     "globby": "^11.0.4",
     "postcss": "^8.3.6",
     "tailwindcss": "^2.2.7"
