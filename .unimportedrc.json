@@ -1,17 +1,9 @@
 {
-  "ignoreUnresolved": [
-    "next-seo.config"
-  ],
-  "ignoreUnused": [
-    "@tailwindcss/forms",
-    "@tailwindcss/typography",
-    "next",
-    "prettier",
-    "react",
-    "react-dom",
-    "rss"
-  ],
+  
   "ignoreUnimported": [
+    "cypress/plugins/index.js",
+    "cypress/support/commands.js",
+    "cypress/support/index.js",
     "next.config.js",
     "pages/404.js",
     "pages/_app.js",
@@ -21,7 +13,6 @@
     "pages/api/newsletter/index.js",
     "pages/api/newsletter/subscribe.js",
     "pages/api/newsletter/unsubscribe/[email].js",
-    "pages/api/subscribe.js",
     "pages/blog/[slug].js",
     "pages/blog/index.js",
     "pages/featured-posts.js",

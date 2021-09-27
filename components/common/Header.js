@@ -1,6 +1,8 @@
 import Link from "next/link";
 import ActiveLink from "./Link";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Ylogo from "@/public/images/y-logo.png";
 import { Toggle } from "@/utils/Themes";
 export default function Header({ currentTheme }) {
   let themes = [
@@ -47,36 +49,12 @@ export default function Header({ currentTheme }) {
   }
   return (
     <div
-      className={`flex items-center justify-center p-5 bg-white dark:bg-gray-900 z-30 shadow-sm`}>
-      {/* sticky top-0 */}
+      className={`flex items-center justify-center  bg-white dark:bg-gray-900 z-30 shadow-sm`}>
       <Link href={"/"}>
-        <a className='cursor-pointer'>
-          <svg
-            width='80'
-            height='50'
-            viewBox='0 0 80 50'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'>
-            <rect width='35' height='15' fill='#000' x='20' y='10' />
-            <rect
-              width='20'
-              height='20'
-              rx='100'
-              fill='#d18512'
-              y='30'
-              x='25'
-            />
-            <rect width='20' height='20' fill='#9310eb' y='10' x='10' />
-          </svg>
+        <a className='w-10 my-5 cursor-pointer '>
+          <Image src={Ylogo} alt='Y logo by uwenayoallain' draggable='false' />
         </a>
       </Link>
-      <ActiveLink
-        activeClassName='text-skin-base before:border-skin-base dark:before:border-skin-base before:scale-x-75'
-        href={"/"}>
-        <a href='' className='link'>
-          Home
-        </a>
-      </ActiveLink>
       <ActiveLink
         activeClassName='text-skin-base before:border-skin-base dark:before:border-skin-base before:scale-x-75'
         href={"/blog"}>
@@ -87,19 +65,33 @@ export default function Header({ currentTheme }) {
         href={"/about"}>
         <a className='link'>About</a>
       </ActiveLink>
-      <button
-        onClick={() => changeTheme(theme)}
-        className={`cursor-pointer mx-3 p-3 rounded-full text-skin-base hover:bg-skin-inverted/30 transition`}>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width='16'
-          height='16'
-          fill='currentColor'
-          viewBox='0 0 16 16'>
-          <rect width='100%' height='100%' fill='currentColor' rx='50%' />
-        </svg>
-      </button>
-      <Toggle />
+      <div className='flex justify-end w-1/3'>
+        <button
+          onClick={() => changeTheme(theme)}
+          className={`cursor-pointer mx-3 p-3 rounded-full text-skin-base hover:bg-skin-inverted/30 transition`}>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='16'
+            height='16'
+            fill='currentColor'
+            viewBox='0 0 16 16'>
+            <rect width='100%' height='100%' fill='currentColor' rx='50%' />
+          </svg>
+        </button>
+        <Toggle />
+        <Link href={"/rss.xml"}>
+          <a className='p-2 ml-3 opacity-50 cursor-pointer hover:opacity-100 '>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='w-5 h-5'
+              viewBox='0 0 20 20'
+              fill='currentColor'>
+              <path d='M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z' />
+              <path d='M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zM3 15a2 2 0 114 0 2 2 0 01-4 0z' />
+            </svg>
+          </a>
+        </Link>
+      </div>
     </div>
   );
 }
