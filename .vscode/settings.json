@@ -1,9 +1,4 @@
 {
-  "frontMatter.content.autoUpdateDate": true,
-  "frontMatter.content.pageFolders": [
-    {
-      "title": "posts",
-      "path": "[[workspace]]/posts"
-    }
-  ]
+  "frontMatter.preview.host": "",
+  "cmake.configureOnOpen": false
 }

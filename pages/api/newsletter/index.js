@@ -1,6 +1,6 @@
 import connectTodb from "@/lib/mongodb";
 connectTodb();
-import Subscriber from "@/lib/Models/models";
+import { Subscriber } from "@/lib/Models/models";
 
 export default async (req, res) => {
   if (req.method === "GET") {

@@ -27,7 +27,7 @@ input:focus {
   @apply border-black outline-none dark:border-white;
 }
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
+z input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-text-fill-color: #64748b;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
@@ -128,46 +128,16 @@ a {
     --background-color-base: 240, 253, 244;
     --border-color-base: 22, 163, 74;
   }
-  .theme-red {
-    --text-color-base: 220, 38, 38;
-    --background-color-base: 254, 242, 242;
-    --border-color-base: 220, 38, 38;
-  }
   .theme-amber {
     --text-color-base: 245, 158, 11;
     --background-color-base: 255, 251, 235;
     --border-color-base: 245, 158, 11;
   }
 
-  .theme-teal {
-    --text-color-base: 13, 148, 136;
-    --background-color-base: 240, 253, 250;
-    --border-color-base: 13, 148, 136;
-  }
-  .theme-indigo {
-    --text-color-base: 79, 70, 229;
-    --background-color-base: 238, 242, 255;
-    --border-color-base: 79, 70, 229;
-  }
   .theme-violet {
     --text-color-base: 124, 58, 237;
     --background-color-base: 245, 243, 255;
     --border-color-base: 124, 58, 237;
-  }
-  .theme-fuchsia {
-    --text-color-base: 192, 38, 211;
-    --background-color-base: 253, 244, 255;
-    --border-color-base: 192, 38, 211;
-  }
-  .theme-pink {
-    --text-color-base: 219, 39, 119;
-    --background-color-base: 253, 242, 248;
-    --border-color-base: 219, 39, 119;
-  }
-  .theme-rose {
-    --text-color-base: 225, 29, 72;
-    --background-color-base: 255, 241, 242;
-    --border-color-base: 225, 29, 72;
   }
 }
 

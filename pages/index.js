@@ -1,16 +1,11 @@
 import PageLayout from "@/layouts/page";
-import Blockquote from "@/components/blog/Quote";
-import Looper from "@/components/simplifiers/Looper";
 import Badge from "@/components/blog/Badge";
-import OuterLink from "@/components/common/OuterLink";
 import Section, { Handler } from "@/components/blog/Section";
-import Myimage from "@/public/images/my-image.jpg";
 import Heading from "@/components/blog/Heading";
 import SocialCard from "@/components/blog/SocialCard";
 import SubHeading from "@/components/blog/SubHeading";
 import ArrowLink from "@/components/common/ArrowLink";
 import InnerLink, { ButtonLinks } from "@/components/common/innerLink";
-import Image from "next/image";
 import Demo from "@/public/images/demo.png";
 import ImageHolder from "@/components/common/ImageHolder";
 
@@ -18,7 +13,10 @@ const Index = () => {
   return (
     <PageLayout>
       <div>
-        <Section title='heading'>
+        <Section
+          title='heading'
+          parentStyles='bg-gradient-to-br from-purple-800 dark:from-blue-500 dark:via-transparent via-transparent'
+          bg='bg-white dark:bg-gray-900'>
           <Handler>
             <Heading>I&apos;m uwenayoallain</Heading>
             <SubHeading>
@@ -35,7 +33,11 @@ const Index = () => {
           </Handler>
           <ArrowLink direction='bottom' to='#about' />
         </Section>
-        <Section title='about' bg='dark:bg-gray-800 bg-gray-50' reverse>
+        <Section
+          title='about'
+          bg='dark:bg-gray-800 bg-gray-50'
+          parentStyles='bg-gradient-to-tl from-purple-800 dark:from-blue-500 dark:via-transparent via-transparent'
+          reverse>
           <Handler height=''>
             <ImageHolder src={Demo} />
           </Handler>
@@ -58,7 +60,10 @@ const Index = () => {
             </SubHeading>
           </Handler>
         </Section>
-        <Section title='blog'>
+        <Section
+          title='blog'
+          bg='bg-white dark:bg-gray-900'
+          parentStyles='bg-gradient-to-bl from-purple-800 dark:from-blue-500 dark:via-transparent via-transparent'>
           <Handler>
             <Heading>My personal blog:</Heading>
             <SubHeading>

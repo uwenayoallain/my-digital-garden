@@ -1,4 +1,3 @@
-import Header from "@/components/blog/Header";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 import Container from "@/components/simplifiers/Container";
 import Demo from "@/public/images/demo.png";
@@ -8,7 +7,6 @@ import Heading from "@/components/blog/Heading";
 import SubHeading from "@/components/blog/SubHeading";
 import InnerLink, { ButtonLinks } from "@/components/common/innerLink";
 import ArrowLink from "@/components/common/ArrowLink";
-import Image from "next/image";
 import ImageHolder from "@/components/common/ImageHolder";
 export default function Blog({ posts }) {
   return (

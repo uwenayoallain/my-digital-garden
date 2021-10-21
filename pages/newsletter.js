@@ -11,7 +11,7 @@ import SubmitForm from "@/components/simplifiers/subscribe";
 export default function Actions() {
   return (
     <>
-      <Section>
+      <Section title='T0do' bg='bg-white dark:bg-gray-900'>
         <Handler>
           <Heading>
             <span className=''>

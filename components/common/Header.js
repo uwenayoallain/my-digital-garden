@@ -7,15 +7,9 @@ import { Toggle } from "@/utils/Themes";
 export default function Header({ currentTheme }) {
   let themes = [
     "theme-default",
-    "theme-violet",
     "theme-green",
-    "theme-indigo",
-    "theme-red",
     "theme-amber",
-    "theme-pink",
-    "theme-teal",
-    "theme-fuchsia",
-    "theme-rose  ",
+    "theme-violet  ",
   ];
   let initialTheme = "theme-default";
   useEffect(() => {
@@ -49,7 +43,7 @@ export default function Header({ currentTheme }) {
   }
   return (
     <div
-      className={`flex items-center justify-center  bg-white dark:bg-gray-900 z-30 shadow-sm`}>
+      className={`flex m-auto items-center justify-center bg-white/95 backdrop-blur dark:bg-gray-900/95 sticky top-0 z-30 shadow w-11/12 rounded-full`}>
       <Link href={"/"}>
         <a className='w-10 my-5 cursor-pointer '>
           <Image src={Ylogo} alt='Y logo by uwenayoallain' draggable='false' />
