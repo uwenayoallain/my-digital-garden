@@ -33,22 +33,6 @@
   </url>
 
   <url>
-    <loc>https://localhost:3000/blog/hello-world</loc>
-  </url>
-
-  <url>
-    <loc>https://localhost:3000/blog/my-first-blog-post</loc>
-  </url>
-
-  <url>
-    <loc>https://localhost:3000/blog/new-blog</loc>
-  </url>
-
-  <url>
-    <loc>https://localhost:3000/blog/now</loc>
-  </url>
-
-  <url>
-    <loc>https://localhost:3000/blog/test-post</loc>
+    <loc>https://localhost:3000/blog/learning Next</loc>
   </url>
 </urlset>

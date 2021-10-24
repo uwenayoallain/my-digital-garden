@@ -9,7 +9,7 @@
             <link>https://localhost:3000//</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 21 Oct 2021 07:55:38 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 21 Oct 2021 10:58:17 GMT</lastBuildDate>
         <atom:link href="https://localhost:3000//rss.xml" rel="self" type="application/rss+xml"/>
         <pubDate>Sat, 24 Jul 2021 22:00:00 GMT</pubDate>
         <copyright><![CDATA[function getFullYear() { [native code] } - uwenayoallain]]></copyright>
@@ -18,42 +18,10 @@
         <webMaster><![CDATA[uwenayoallain]]></webMaster>
         <ttl>60</ttl>
         <item>
-            <title><![CDATA[Blogging is cool]]></title>
-            <description><![CDATA[Blogging is cool in 2021]]></description>
-            <link>https://localhost:3000//blog/hello-world</link>
-            <guid isPermaLink="true">https://localhost:3000//blog/hello-world</guid>
-            <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
-            <pubDate>Sat, 24 Jul 2021 22:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[My first Blog post]]></title>
-            <description><![CDATA[My first Blog post in 2021]]></description>
-            <link>https://localhost:3000//blog/my-first-blog-post</link>
-            <guid isPermaLink="true">https://localhost:3000//blog/my-first-blog-post</guid>
-            <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
-            <pubDate>Mon, 26 Jul 2021 22:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[My first Blog post]]></title>
-            <description><![CDATA[My first Blog post in 2021]]></description>
-            <link>https://localhost:3000//blog/new-blog</link>
-            <guid isPermaLink="true">https://localhost:3000//blog/new-blog</guid>
-            <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
-            <pubDate>Mon, 26 Jul 2021 22:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[how i built my blog]]></title>
-            <description><![CDATA[how i built my blog with next js , mdx and tailwindcss]]></description>
-            <link>https://localhost:3000//blog/now</link>
-            <guid isPermaLink="true">https://localhost:3000//blog/now</guid>
-            <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
-            <pubDate>Mon, 19 Jul 2021 22:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Blogging is cool]]></title>
-            <description><![CDATA[Blogging is cool in 2021]]></description>
-            <link>https://localhost:3000//blog/test-post</link>
-            <guid isPermaLink="true">https://localhost:3000//blog/test-post</guid>
+            <title><![CDATA[Getting Started with Next.js]]></title>
+            <description><![CDATA[Next.js is the production framework for react.]]></description>
+            <link>https://localhost:3000//blog/learning Next</link>
+            <guid isPermaLink="true">https://localhost:3000//blog/learning Next</guid>
             <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
             <pubDate>Sat, 24 Jul 2021 22:00:00 GMT</pubDate>
         </item>

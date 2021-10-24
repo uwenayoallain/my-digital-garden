@@ -11,6 +11,7 @@ import { DefaultSeo, SocialProfileJsonLd } from "next-seo";
 import defaultSeoConfig from "./../next-seo.json";
 import NProgress from "nprogress";
 import Router from "next/router";
+import React from "react";
 function MyApp({ Component, pageProps }) {
   Router.onRouteChangeStart = () => {
     NProgress.start();
