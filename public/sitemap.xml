@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>undefinedabout</loc>
+    <loc>https://localhost:3000/about</loc>
   </url>
 
   <url>
-    <loc>undefinedactions</loc>
+    <loc>https://localhost:3000/actions</loc>
   </url>
 
   <url>
-    <loc>undefinedallpages</loc>
+    <loc>https://localhost:3000/allpages</loc>
   </url>
 
   <url>
-    <loc>undefinedfeatured-posts</loc>
+    <loc>https://localhost:3000/featured-posts</loc>
   </url>
 
   <url>
-    <loc>undefinedindex</loc>
+    <loc>https://localhost:3000/index</loc>
   </url>
 
   <url>
-    <loc>undefinednewsletter</loc>
+    <loc>https://localhost:3000/newsletter</loc>
   </url>
 
   <url>
-    <loc>undefinedopensource</loc>
+    <loc>https://localhost:3000/opensource</loc>
   </url>
 
   <url>
-    <loc>undefineduses</loc>
+    <loc>https://localhost:3000/uses</loc>
   </url>
 
   <url>
-    <loc>undefinedblog/learning Next</loc>
+    <loc>https://localhost:3000/blog/learning Next</loc>
   </url>
 </urlset>

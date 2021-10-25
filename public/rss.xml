@@ -2,15 +2,15 @@
     <channel>
         <title><![CDATA[uwenayoallain's  digital garden]]></title>
         <description><![CDATA[I am a developer, a blogger and an open source lover based in Rwanda🇷🇼. This is my digital garden, where I write about the things I&apos;m working on and share what I've learned.]]></description>
-        <link>undefined/</link>
+        <link>https://localhost:3000//</link>
         <image>
             <url>https://yarisonallain.vercel.app/images/demo.png</url>
             <title>uwenayoallain&apos;s  digital garden</title>
-            <link>undefined/</link>
+            <link>https://localhost:3000//</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 25 Oct 2021 06:03:41 GMT</lastBuildDate>
-        <atom:link href="undefined/rss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Mon, 25 Oct 2021 07:51:38 GMT</lastBuildDate>
+        <atom:link href="https://localhost:3000//rss.xml" rel="self" type="application/rss+xml"/>
         <pubDate>Sat, 24 Jul 2021 22:00:00 GMT</pubDate>
         <copyright><![CDATA[function getFullYear() { [native code] } - uwenayoallain]]></copyright>
         <language><![CDATA[en]]></language>
@@ -20,8 +20,8 @@
         <item>
             <title><![CDATA[Getting Started with Next.js]]></title>
             <description><![CDATA[Next.js is the production framework for react.]]></description>
-            <link>undefined/blog/learning Next</link>
-            <guid isPermaLink="true">undefined/blog/learning Next</guid>
+            <link>https://localhost:3000//blog/learning Next</link>
+            <guid isPermaLink="true">https://localhost:3000//blog/learning Next</guid>
             <dc:creator><![CDATA[uwenayoallain]]></dc:creator>
             <pubDate>Sat, 24 Jul 2021 22:00:00 GMT</pubDate>
         </item>
