@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const namespace = "http://localhost:3000/api/counts/";
+const namespace = `${process.env.NEXT_PUBLIC_VERCEL_URL}api/counts/`;
 
 export function usePageViews(path) {
   const [views, setViews] = useState(1);
