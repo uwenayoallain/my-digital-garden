@@ -27,7 +27,7 @@ input:focus {
   @apply border-black outline-none dark:border-white;
 }
 input:-webkit-autofill,
-z input:-webkit-autofill:hover,
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
   -webkit-text-fill-color: #64748b;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
@@ -43,13 +43,6 @@ input:-webkit-autofill:focus {
   text-shadow: none;
 }
 
-div.main {
-  height: 100vh;
-  width: 100vw;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -60,13 +53,11 @@ div.main {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-skin-inverted/90;
   border-radius: 5px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-skin-inverted;
   border-radius: 10px;
   border: 2.5px solid transparent;
   background-clip: content-box;

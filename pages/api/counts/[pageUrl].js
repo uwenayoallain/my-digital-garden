@@ -1,12 +1,14 @@
+import { PSDB } from "planetscale-node";
+const conn = new PSDB("main");
 export default async function handler(req, res) {
   const { pageUrl } = req.query;
   if (req.method === "POST") {
-  } else if (req.method === "GET") {
-  } else {
-    res
-      .status(405)
-      .send(
-        `Uuuuhhh,using ${req.method} method is not supported at this end point consider contacting support at support@yarisonallain.com or [uwenayoallain@gmail.com] `
-      );
+    await conn.query(
+      `IF EXISTS(UPDATE pages SET count = count+1 WHERE pageUrl = '${pageUrl}) ELSE (INSERT INTO pages(pageUrl,count) VALUES('${pageUrl}',1))'`
+    );
   }
+  const [getCounts, _] = await conn.query(
+    `SELECT count FROM pages WHERE pageUrl= ${pageUrl})`
+  );
+  return res.status(200).send(getCounts);
 }
